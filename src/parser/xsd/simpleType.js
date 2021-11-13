@@ -3,12 +3,12 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var XSDElement = require('./xsdElement');
-var descriptor = require('./descriptor');
-var helper = require('../helper');
-var xsd = require('../xsd');
+var XSDElement = require("./xsdElement");
+var descriptor = require("./descriptor");
+var helper = require("../helper");
+var xsd = require("../xsd");
 
 class SimpleType extends XSDElement {
   constructor(nsName, attrs, options) {
@@ -20,7 +20,7 @@ class SimpleType extends XSDElement {
   }
 
   describe(definitions) {
-    var descriptor = this.descriptor = new XSDElement.TypeDescriptor();
+    var descriptor = (this.descriptor = new XSDElement.TypeDescriptor());
     descriptor.name = this.$name || this.name;
     descriptor.xmlns = this.nsURI;
     descriptor.isSimple = true;
@@ -51,7 +51,7 @@ class SimpleType extends XSDElement {
       memberTypes.union = true; // Set the union flag to true
       this.union.postProcess(definitions);
       if (this.union.memberTypes) {
-        this.union.memberTypes.forEach(function(t) {
+        this.union.memberTypes.forEach(function (t) {
           t.postProcess(definitions);
           memberTypes.push(t.type);
         });
@@ -61,7 +61,7 @@ class SimpleType extends XSDElement {
   }
 }
 
-SimpleType.elementName = 'simpleType';
-SimpleType.allowedChildren = ['annotation', 'list', 'union', 'restriction'];
+SimpleType.elementName = "simpleType";
+SimpleType.allowedChildren = ["annotation", "list", "union", "restriction"];
 
 module.exports = SimpleType;

@@ -3,10 +3,10 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var _ = require('lodash');
-var Security = require('./security');
+var _ = require("lodash");
+var Security = require("./security");
 
 class BasicAuthSecurity extends Security {
   constructor(username, password, options) {
@@ -16,10 +16,11 @@ class BasicAuthSecurity extends Security {
   }
 
   addHttpHeaders(headers) {
-    var cred = Buffer.from((this.username + ':' + this.password) || '')
-      .toString('base64');
-    headers.Authorization = 'Basic ' + cred;
-  };
+    var cred = Buffer.from(this.username + ":" + this.password || "").toString(
+      "base64"
+    );
+    headers.Authorization = "Basic " + cred;
+  }
 }
 
 module.exports = BasicAuthSecurity;

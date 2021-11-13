@@ -3,14 +3,14 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var XSDElement = require('./xsdElement');
-var QName = require('../qname');
-var helper = require('../helper');
-var Schema = require('./schema');
-var ComplexType = require('./complexType');
-var SimpleType = require('./simpleType');
+var XSDElement = require("./xsdElement");
+var QName = require("../qname");
+var helper = require("../helper");
+var Schema = require("./schema");
+var ComplexType = require("./complexType");
+var SimpleType = require("./simpleType");
 
 class Element extends XSDElement {
   constructor(nsName, attrs, options) {
@@ -34,8 +34,12 @@ class Element extends XSDElement {
     } else if (type instanceof XSDElement) {
       typeQName = type.getQName();
     }
-    var descriptor = this.descriptor =
-      new XSDElement.ElementDescriptor(qname, typeQName, form, isMany);
+    var descriptor = (this.descriptor = new XSDElement.ElementDescriptor(
+      qname,
+      typeQName,
+      form,
+      isMany
+    ));
 
     if (this.$nillable) {
       descriptor.isNillable = true;
@@ -59,7 +63,7 @@ class Element extends XSDElement {
           descriptor.attributes = typeDescriptor.attributes;
           descriptor.mixed = typeDescriptor.mixed;
           descriptor.extension = typeDescriptor.extension;
-          if(descriptor.extension && descriptor.extension.isSimple === true) {
+          if (descriptor.extension && descriptor.extension.isSimple === true) {
             descriptor.isSimple = true;
           }
           descriptor.typeDescriptor = typeDescriptor;
@@ -71,7 +75,7 @@ class Element extends XSDElement {
     } else {
       // anonymous complexType or simpleType
       var children = this.children;
-      for (var i = 0, child; child = children[i]; i++) {
+      for (var i = 0, child; (child = children[i]); i++) {
         if (child instanceof ComplexType) {
           descriptor.isSimple = false;
           var childDescriptor = child.describe(definitions);
@@ -86,8 +90,12 @@ class Element extends XSDElement {
           child.$name = this.$name;
           let typeQName = child.getQName();
           // regenerate descriptor with new type qname
-          descriptor = this.descriptor =
-            new XSDElement.ElementDescriptor(qname, typeQName, form, isMany);
+          descriptor = this.descriptor = new XSDElement.ElementDescriptor(
+            qname,
+            typeQName,
+            form,
+            isMany
+          );
           descriptor.isSimple = true;
           if (child.type && child.type.jsType) {
             descriptor.jsType = child.type.jsType;
@@ -106,13 +114,16 @@ class Element extends XSDElement {
   postProcess(defintions) {
     var schemas = defintions.schemas;
     if (this.$ref) {
-      this.ref = this.resolveSchemaObject(schemas, 'element', this.$ref);
+      this.ref = this.resolveSchemaObject(schemas, "element", this.$ref);
     } else if (this.$type) {
-      this.type = this.resolveSchemaObject(schemas, 'type', this.$type);
+      this.type = this.resolveSchemaObject(schemas, "type", this.$type);
     }
     if (this.substitutionGroup) {
       this.substitutionGroup = this.resolveSchemaObject(
-        schemas, 'element', this.$substitutionGroup);
+        schemas,
+        "element",
+        this.$substitutionGroup
+      );
     }
   }
 
@@ -120,23 +131,29 @@ class Element extends XSDElement {
     var parent = this.parent;
     if (parent instanceof Schema) {
       // Global element
-      return 'qualified';
+      return "qualified";
     }
     if (this.$form) {
       return this.$form;
     }
     while (parent) {
       if (parent instanceof Schema) {
-        return parent.$elementFormDefault || 'unqualified';
+        return parent.$elementFormDefault || "unqualified";
       }
       parent = parent.parent;
     }
-    return 'unqualified';
+    return "unqualified";
   }
 }
 
-Element.elementName = 'element';
-Element.allowedChildren = ['annotation', 'complexType', 'simpleType',
-  'unique', 'key', 'keyref'];
+Element.elementName = "element";
+Element.allowedChildren = [
+  "annotation",
+  "complexType",
+  "simpleType",
+  "unique",
+  "key",
+  "keyref",
+];
 
 module.exports = Element;

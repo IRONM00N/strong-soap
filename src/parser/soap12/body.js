@@ -3,10 +3,10 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var SOAPElement = require('./soapElement');
-var helper = require('../helper');
+var SOAPElement = require("./soapElement");
+var helper = require("../helper");
 
 /**
  * <soap:body parts="nmtokens"? use="literal|encoded"?
@@ -18,7 +18,7 @@ class Body extends SOAPElement {
   }
 }
 
-Body.elementName = 'body';
-Body.allowedChildren = ['documentation'];
+Body.elementName = "body";
+Body.allowedChildren = ["documentation"];
 
 module.exports = Body;

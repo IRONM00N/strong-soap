@@ -3,10 +3,10 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var path = require('path');
-var SG = require('strong-globalize');
+var path = require("path");
+var SG = require("strong-globalize");
 
-SG.SetRootDir(path.join(__dirname, '..'), {autonomousMsgLoading: 'all'});
+SG.SetRootDir(path.join(__dirname, ".."), { autonomousMsgLoading: "all" });
 module.exports = SG();

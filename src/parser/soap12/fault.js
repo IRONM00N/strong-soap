@@ -3,13 +3,13 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var SOAPElement = require('./soapElement');
-var helper = require('../helper');
+var SOAPElement = require("./soapElement");
+var helper = require("../helper");
 
 /**
- * <soap:fault name="nmtoken" use="literal|encoded" 
+ * <soap:fault name="nmtoken" use="literal|encoded"
  * encodingStyle="uri"? namespace="uri"?>
  */
 class Fault extends SOAPElement {
@@ -18,7 +18,7 @@ class Fault extends SOAPElement {
   }
 }
 
-Fault.elementName = 'fault';
-Fault.allowedChildren = ['documentation'];
+Fault.elementName = "fault";
+Fault.allowedChildren = ["documentation"];
 
 module.exports = Fault;

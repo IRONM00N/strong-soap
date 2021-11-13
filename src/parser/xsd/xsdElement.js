@@ -3,11 +3,11 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var Element = require('../element');
-var helper = require('../helper');
-var descriptor = require('./descriptor');
+var Element = require("../element");
+var helper = require("../helper");
+var descriptor = require("./descriptor");
 
 class XSDElement extends Element {
   constructor(nsName, attrs, options) {
@@ -21,7 +21,7 @@ class XSDElement extends Element {
 
     var isMany = this.isMany();
     var childDescriptor;
-    for (var i = 0, child; child = children[i]; i++) {
+    for (var i = 0, child; (child = children[i]); i++) {
       childDescriptor = child.describe(definitions);
       if (childDescriptor) {
         descriptor.add(childDescriptor, isMany);
@@ -43,13 +43,13 @@ class XSDElement extends Element {
    * @returns {boolean}
    */
   isMany() {
-    if (this.$maxOccurs === 'unbounded') return true;
+    if (this.$maxOccurs === "unbounded") return true;
     return Number(this.$maxOccurs) > 1;
   }
 }
 
 XSDElement.targetNamespace = Element.namespaces.xsd;
-XSDElement.allowedChildren = ['annotation'];
+XSDElement.allowedChildren = ["annotation"];
 
 // Descriptors
 XSDElement.ElementDescriptor = descriptor.ElementDescriptor;
@@ -57,4 +57,3 @@ XSDElement.AttributeDescriptor = descriptor.AttributeDescriptor;
 XSDElement.TypeDescriptor = descriptor.TypeDescriptor;
 
 module.exports = XSDElement;
-

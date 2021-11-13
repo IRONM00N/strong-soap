@@ -3,12 +3,12 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var _ = require('lodash');
-var assert = require('assert');
-var XSDElement = require('./xsdElement');
-var helper = require('./../helper');
+var _ = require("lodash");
+var assert = require("assert");
+var XSDElement = require("./xsdElement");
+var helper = require("./../helper");
 var Set = helper.Set;
 
 class Schema extends XSDElement {
@@ -26,9 +26,11 @@ class Schema extends XSDElement {
   merge(source, isInclude) {
     if (source === this) return this;
     assert(source instanceof Schema);
-    if (this.$targetNamespace === source.$targetNamespace ||
+    if (
+      this.$targetNamespace === source.$targetNamespace ||
       // xsd:include allows the target schema that does not have targetNamespace
-      (isInclude && source.$targetNamespace === undefined)) {
+      (isInclude && source.$targetNamespace === undefined)
+    ) {
       _.merge(this.complexTypes, source.complexTypes);
       _.merge(this.simpleTypes, source.simpleTypes);
       _.merge(this.elements, source.elements);
@@ -45,38 +47,42 @@ class Schema extends XSDElement {
 
   addChild(child) {
     var name = child.$name;
-    if (child.getTargetNamespace() === helper.namespaces.xsd &&
-      name in helper.schemaTypes)
+    if (
+      child.getTargetNamespace() === helper.namespaces.xsd &&
+      name in helper.schemaTypes
+    )
       return;
     switch (child.name) {
-      case 'include':
-      case 'import':
+      case "include":
+      case "import":
         var location = child.$schemaLocation || child.$location;
         if (location) {
           this.includes.push({
-            namespace: child.$namespace || child.$targetNamespace
-            || this.$targetNamespace,
+            namespace:
+              child.$namespace ||
+              child.$targetNamespace ||
+              this.$targetNamespace,
             location: location,
-            type: child.name // include or import
+            type: child.name, // include or import
           });
         }
         break;
-      case 'complexType':
+      case "complexType":
         this.complexTypes[name] = child;
         break;
-      case 'simpleType':
+      case "simpleType":
         this.simpleTypes[name] = child;
         break;
-      case 'element':
+      case "element":
         this.elements[name] = child;
         break;
-      case 'group':
+      case "group":
         this.groups[name] = child;
         break;
-      case 'attribute':
+      case "attribute":
         this.attributes[name] = child;
         break;
-      case 'attributeGroup':
+      case "attributeGroup":
         this.attributeGroups[name] = child;
         break;
     }
@@ -85,7 +91,7 @@ class Schema extends XSDElement {
   postProcess(defintions) {
     var visited = new Set();
     visited.add(this);
-    this.children.forEach(function(c) {
+    this.children.forEach(function (c) {
       visitDfs(defintions, visited, c);
     });
   }
@@ -97,14 +103,23 @@ function visitDfs(defintions, nodes, node) {
     node.postProcess(defintions);
     node._processed = true;
 
-    node.children.forEach(function(child) {
+    node.children.forEach(function (child) {
       visitDfs(defintions, nodes, child);
     });
   }
 }
 
-Schema.elementName = 'schema';
-Schema.allowedChildren = ['annotation', 'element', 'complexType', 'simpleType',
-  'include', 'import', 'group', 'attribute', 'attributeGroup'];
+Schema.elementName = "schema";
+Schema.allowedChildren = [
+  "annotation",
+  "element",
+  "complexType",
+  "simpleType",
+  "include",
+  "import",
+  "group",
+  "attribute",
+  "attributeGroup",
+];
 
 module.exports = Schema;

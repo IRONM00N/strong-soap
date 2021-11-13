@@ -3,7 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
 /**
  * Scope for XML namespaces
@@ -26,10 +26,10 @@ class NamespaceScope {
    */
   getNamespaceURI(prefix, localOnly) {
     switch (prefix) {
-      case 'xml':
-        return 'http://www.w3.org/XML/1998/namespace';
-      case 'xmlns':
-        return 'http://www.w3.org/2000/xmlns/';
+      case "xml":
+        return "http://www.w3.org/XML/1998/namespace";
+      case "xmlns":
+        return "http://www.w3.org/2000/xmlns/";
       default:
         var nsURI = this.namespaces[prefix];
         /*jshint -W116 */
@@ -45,17 +45,17 @@ class NamespaceScope {
 
   getNamespaceMapping(prefix) {
     switch (prefix) {
-      case 'xml':
+      case "xml":
         return {
-          uri: 'http://www.w3.org/XML/1998/namespace',
-          prefix: 'xml',
-          declared: true
+          uri: "http://www.w3.org/XML/1998/namespace",
+          prefix: "xml",
+          declared: true,
         };
-      case 'xmlns':
+      case "xmlns":
         return {
-          uri: 'http://www.w3.org/2000/xmlns/',
-          prefix: 'xmlns',
-          declared: true
+          uri: "http://www.w3.org/2000/xmlns/",
+          prefix: "xmlns",
+          declared: true,
         };
       default:
         var mapping = this.namespaces[prefix];
@@ -78,10 +78,10 @@ class NamespaceScope {
    */
   getPrefix(nsURI, localOnly) {
     switch (nsURI) {
-      case 'http://www.w3.org/XML/1998/namespace':
-        return 'xml';
-      case 'http://www.w3.org/2000/xmlns/':
-        return 'xmlns';
+      case "http://www.w3.org/XML/1998/namespace":
+        return "xml";
+      case "http://www.w3.org/2000/xmlns/":
+        return "xmlns";
       default:
         for (var p in this.namespaces) {
           if (this.namespaces[p].uri === nsURI) {
@@ -104,13 +104,16 @@ class NamespaceScope {
    */
   getPrefixMapping(nsURI, localOnly) {
     switch (nsURI) {
-      case 'http://www.w3.org/XML/1998/namespace':
-        return 'xml';
-      case 'http://www.w3.org/2000/xmlns/':
-        return 'xmlns';
+      case "http://www.w3.org/XML/1998/namespace":
+        return "xml";
+      case "http://www.w3.org/2000/xmlns/":
+        return "xmlns";
       default:
         for (var p in this.namespaces) {
-          if (this.namespaces[p].uri === nsURI && this.namespaces[p].declared===true) {
+          if (
+            this.namespaces[p].uri === nsURI &&
+            this.namespaces[p].declared === true
+          ) {
             return this.namespaces[p];
           }
         }
@@ -128,9 +131,9 @@ class NamespaceScope {
    * @returns {string}
    */
   generatePrefix(base) {
-    base = base || 'ns';
+    base = base || "ns";
     while (true) {
-      let prefix = 'ns' + (++this.prefixCount);
+      let prefix = "ns" + ++this.prefixCount;
       if (!this.getNamespaceURI(prefix)) {
         // The prefix is not used
         return prefix;
@@ -166,7 +169,7 @@ class NamespaceContext {
       this.currentScope.namespaces[prefix] = {
         uri: nsURI,
         prefix: prefix,
-        declared: false
+        declared: false,
       };
       return true;
     }
@@ -205,8 +208,9 @@ class NamespaceContext {
    * @returns {String} Namespace URI
    */
   getNamespaceURI(prefix, localOnly) {
-    return this.currentScope &&
-      this.currentScope.getNamespaceURI(prefix, localOnly);
+    return (
+      this.currentScope && this.currentScope.getNamespaceURI(prefix, localOnly)
+    );
   }
 
   /**
@@ -216,8 +220,7 @@ class NamespaceContext {
    * @returns {String} Namespace prefix
    */
   getPrefix(nsURI, localOnly) {
-    return this.currentScope &&
-      this.currentScope.getPrefix(nsURI, localOnly);
+    return this.currentScope && this.currentScope.getPrefix(nsURI, localOnly);
   }
 
   /**
@@ -226,8 +229,7 @@ class NamespaceContext {
    * @returns {String} Namespace mapping
    */
   getPrefixMapping(nsURI) {
-    return this.currentScope &&
-      this.currentScope.getPrefixMapping(nsURI);
+    return this.currentScope && this.currentScope.getPrefixMapping(nsURI);
   }
 
   /**
@@ -236,8 +238,7 @@ class NamespaceContext {
    * @returns {string}
    */
   generatePrefix(base) {
-    return this.currentScope &&
-      this.currentScope.generatePrefix(base);
+    return this.currentScope && this.currentScope.generatePrefix(base);
   }
 
   /**
@@ -265,7 +266,7 @@ class NamespaceContext {
       mapping = {
         uri: nsURI,
         prefix: prefix,
-        declared: false
+        declared: false,
       };
       this.currentScope.namespaces[prefix] = mapping;
       return mapping;
@@ -292,15 +293,12 @@ class NamespaceContext {
       mapping = {
         prefix: mapping.prefix,
         uri: nsURI,
-        declared: true
+        declared: true,
       };
       this.currentScope.namespaces[mapping.prefix] = mapping;
     }
     return mapping;
-  };
+  }
 }
 
 module.exports = NamespaceContext;
-
-
-

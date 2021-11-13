@@ -3,13 +3,20 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var _ = require('lodash');
-var Security = require('./security');
+var _ = require("lodash");
+var Security = require("./security");
 
 class NTLMSecurity extends Security {
-  constructor(username, password, domain, workstation, wsdlAuthRequired, options) {
+  constructor(
+    username,
+    password,
+    domain,
+    workstation,
+    wsdlAuthRequired,
+    options
+  ) {
     super(options);
     this.username = username;
     this.password = password;
@@ -28,6 +35,5 @@ class NTLMSecurity extends Security {
     _.merge(options, this.options);
   }
 }
-
 
 module.exports = NTLMSecurity;

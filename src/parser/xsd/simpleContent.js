@@ -3,10 +3,10 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var XSDElement = require('./xsdElement');
-var Extension = require('./extension');
+var XSDElement = require("./xsdElement");
+var Extension = require("./extension");
 
 class SimpleContent extends XSDElement {
   constructor(nsName, attrs, options) {
@@ -14,7 +14,7 @@ class SimpleContent extends XSDElement {
   }
 }
 
-SimpleContent.elementName = 'simpleContent';
-SimpleContent.allowedChildren = ['annotation', 'extension', 'restriction'];
+SimpleContent.elementName = "simpleContent";
+SimpleContent.allowedChildren = ["annotation", "extension", "restriction"];
 
 module.exports = SimpleContent;

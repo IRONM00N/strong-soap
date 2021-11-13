@@ -3,12 +3,12 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var WSDLElement = require('./wsdlElement');
-var assert = require('assert');
-var Schema = require('../xsd/schema');
-var Documentation = require('./documentation');
+var WSDLElement = require("./wsdlElement");
+var assert = require("assert");
+var Schema = require("../xsd/schema");
+var Documentation = require("./documentation");
 
 class Types extends WSDLElement {
   constructor(nsName, attrs, options) {
@@ -20,7 +20,6 @@ class Types extends WSDLElement {
     assert(child instanceof Schema || child instanceof Documentation);
 
     if (child instanceof Schema) {
-
       var targetNamespace = child.$targetNamespace;
 
       if (!this.schemas.hasOwnProperty(targetNamespace)) {
@@ -31,10 +30,10 @@ class Types extends WSDLElement {
         this.schemas[targetNamespace].merge(child, true);
       }
     }
-  };
+  }
 }
 
-Types.elementName = 'types';
-Types.allowedChildren = ['schema', 'documentation'];
+Types.elementName = "types";
+Types.allowedChildren = ["schema", "documentation"];
 
 module.exports = Types;

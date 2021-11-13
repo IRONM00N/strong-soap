@@ -3,8 +3,8 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-var g = require('./lib/globalize');
-var _ = require('lodash');
+var g = require("./lib/globalize");
+var _ = require("lodash");
 
 var aliasedClientStubs = {};
 var clientStubs = {};
@@ -33,7 +33,7 @@ module.exports = {
   errOnCreateClient: false,
   getStub: getStub,
   registerClient: registerClient,
-  reset: reset
+  reset: reset,
 };
 
 /**
@@ -53,7 +53,9 @@ function createClient(wsdlUrl, options, cb) {
   }
 
   if (this.errOnCreateClient) {
-    return setTimeout(cb.bind(null, new Error(g.f('forced error on {{createClient}}'))));
+    return setTimeout(
+      cb.bind(null, new Error(g.f("forced error on {{createClient}}")))
+    );
   }
 
   var client = getStub(wsdlUrl);
@@ -62,7 +64,9 @@ function createClient(wsdlUrl, options, cb) {
     resetStubbedMethods(client);
     setTimeout(cb.bind(null, null, client));
   } else {
-    setTimeout(cb.bind(null, new Error(g.f('no client stubbed for %s', wsdlUrl))));
+    setTimeout(
+      cb.bind(null, new Error(g.f("no client stubbed for %s", wsdlUrl)))
+    );
   }
 }
 
@@ -82,8 +86,8 @@ function createClient(wsdlUrl, options, cb) {
  * @return {Function}
  */
 function createErroringStub(err) {
-  return function() {
-    this.args.forEach(function(argSet) {
+  return function () {
+    this.args.forEach(function (argSet) {
       setTimeout(argSet[1].bind(null, err));
     });
     this.yields(err);
@@ -106,8 +110,8 @@ function createErroringStub(err) {
  * @return {Function}
  */
 function createErroringStubAsync(err) {
-  return function() {
-    this.args.forEach(function(argSet) {
+  return function () {
+    this.args.forEach(function (argSet) {
       setTimeout(argSet[1].bind(null, err));
     });
     this.rejects(err);
@@ -130,8 +134,8 @@ function createErroringStubAsync(err) {
  * @return {Function}
  */
 function createRespondingStub(object) {
-  return function() {
-    this.args.forEach(function(argSet) {
+  return function () {
+    this.args.forEach(function (argSet) {
       setTimeout(argSet[1].bind(null, null, object));
     });
     this.yields(null, object);
@@ -154,8 +158,8 @@ function createRespondingStub(object) {
  * @return {Function}
  */
 function createRespondingStubAsync(object) {
-  return function() {
-    this.args.forEach(function(argSet) {
+  return function () {
+    this.args.forEach(function (argSet) {
       setTimeout(argSet[1].bind(null, null, object));
     });
     this.resolves(object);
@@ -194,9 +198,9 @@ function getStub(aliasOrWsdlUrl) {
 }
 
 function resetStubbedMethods(client) {
-  Object.keys(client).forEach(function(method) {
+  Object.keys(client).forEach(function (method) {
     method = client[method];
-    if (typeof method === 'function' && typeof method.reset === 'function') {
+    if (typeof method === "function" && typeof method.reset === "function") {
       method.reset();
     }
   });

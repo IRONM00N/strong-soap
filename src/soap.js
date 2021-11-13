@@ -5,19 +5,19 @@
 
 "use strict";
 
-var Client = require('./client'),
-  Server = require('./server'),
-  HttpClient = require('./http'),
-  security = require('./security'),
-  passwordDigest = require('./utils').passwordDigest,
-  parser = require('./parser/index'),
+var Client = require("./client"),
+  Server = require("./server"),
+  HttpClient = require("./http"),
+  security = require("./security"),
+  passwordDigest = require("./utils").passwordDigest,
+  parser = require("./parser/index"),
   openWSDL = parser.WSDL.open,
-  debug = require('debug')('strong-soap:soap');
+  debug = require("debug")("strong-soap:soap");
 
 var _wsdlCache = {};
 
 function _requestWSDL(url, options, callback) {
-  if (typeof options === 'function') {
+  if (typeof options === "function") {
     callback = options;
     options = {};
   }
@@ -25,13 +25,12 @@ function _requestWSDL(url, options, callback) {
 
   var wsdl = _wsdlCache[url];
   if (wsdl) {
-    debug('_requestWSDL, wsdl in cache %s', wsdl);
-    process.nextTick(function() {
+    debug("_requestWSDL, wsdl in cache %s", wsdl);
+    process.nextTick(function () {
       callback(null, wsdl);
     });
-  }
-  else {
-    openWSDL(url, options, function(err, wsdl) {
+  } else {
+    openWSDL(url, options, function (err, wsdl) {
       if (err) {
         return callback(err);
       } else {
@@ -43,25 +42,30 @@ function _requestWSDL(url, options, callback) {
 }
 
 function createClient(url, options, callback, endpoint) {
-  if (typeof options === 'function') {
+  if (typeof options === "function") {
     endpoint = callback;
     callback = options;
     options = {};
   }
   endpoint = options.endpoint || endpoint;
-  debug('createClient params: wsdl url: %s client options: %j', url, options);
-  _requestWSDL(url, options, function(err, wsdl) {
+  debug("createClient params: wsdl url: %s client options: %j", url, options);
+  _requestWSDL(url, options, function (err, wsdl) {
     callback(err, wsdl && new Client(wsdl, endpoint, options));
   });
 }
 
 function listen(server, pathOrOptions, services, xml) {
-  debug('listen params: pathOrOptions: %j services: %j xml: %j', pathOrOptions, services, xml);
+  debug(
+    "listen params: pathOrOptions: %j services: %j xml: %j",
+    pathOrOptions,
+    services,
+    xml
+  );
   var options = {},
     path = pathOrOptions,
     uri = null;
 
-  if (typeof pathOrOptions === 'object') {
+  if (typeof pathOrOptions === "object") {
     options = pathOrOptions;
     path = options.path;
     services = options.services;

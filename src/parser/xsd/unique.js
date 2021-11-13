@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var KeyBase = require('./keybase');
+var KeyBase = require("./keybase");
 
 class Unique extends KeyBase {
   constructor(nsName, attrs, options) {
@@ -13,6 +13,6 @@ class Unique extends KeyBase {
   }
 }
 
-Unique.elementName = 'unique';
+Unique.elementName = "unique";
 
 module.exports = Unique;

@@ -3,10 +3,10 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var SOAPElement = require('./soapElement');
-var helper = require('../helper');
+var SOAPElement = require("./soapElement");
+var helper = require("../helper");
 
 /**
  * <soap:header message="qname" part="nmtoken" use="literal|encoded"
@@ -22,13 +22,13 @@ class Header extends SOAPElement {
   }
 
   addChild(child) {
-    if (child.name === 'headerfault') {
+    if (child.name === "headerfault") {
       this.fault = child;
     }
   }
 }
 
-Header.elementName = 'header';
-Header.allowedChildren = ['documentation', 'headerFault'];
+Header.elementName = "header";
+Header.allowedChildren = ["documentation", "headerFault"];
 
 module.exports = Header;

@@ -3,15 +3,15 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var g = require('../globalize');
-var assert = require('assert');
-var QName = require('./qname');
-var typeRegistry = require('./typeRegistry');
-var helper = require('./helper');
-var xsd = require('./xsd');
-var debug = require('debug')('strong-soap:wsdl:element');
+var g = require("../globalize");
+var assert = require("assert");
+var QName = require("./qname");
+var typeRegistry = require("./typeRegistry");
+var helper = require("./helper");
+var xsd = require("./xsd");
+var debug = require("debug")("strong-soap:wsdl:element");
 
 var EMPTY_PREFIX = helper.EMPTY_PREFIX;
 var namespaces = helper.namespaces;
@@ -26,14 +26,16 @@ class Element {
     this.nsName = nsName;
     this.prefix = qname.prefix;
     this.name = qname.name;
-    this.nsURI = '';
+    this.nsURI = "";
     this.parent = null;
     this.children = [];
     this.xmlns = {};
 
     if (this.constructor.elementName) {
-      assert(this.name === this.constructor.elementName,
-        'Invalid element name: ' + this.name);
+      assert(
+        this.name === this.constructor.elementName,
+        "Invalid element name: " + this.name
+      );
     }
 
     this._initializeOptions(options);
@@ -50,12 +52,11 @@ class Element {
           attrs[key] = namespaces.xsi;
         }
         this.xmlns[match[1] ? match[1] : EMPTY_PREFIX] = attrs[key];
-      }
-      else {
-        if (key === 'value') {
+      } else {
+        if (key === "value") {
           this[this.valueKey] = attrs[key];
         } else {
-          this['$' + key] = attrs[key];
+          this["$" + key] = attrs[key];
         }
       }
     }
@@ -66,36 +67,38 @@ class Element {
 
   _initializeOptions(options) {
     if (options) {
-      this.valueKey = options.valueKey || '$value';
-      this.xmlKey = options.xmlKey || '$xml';
+      this.valueKey = options.valueKey || "$value";
+      this.xmlKey = options.xmlKey || "$xml";
       this.ignoredNamespaces = options.ignoredNamespaces || [];
       this.forceSoapVersion = options.forceSoapVersion;
     } else {
-      this.valueKey = '$value';
-      this.xmlKey = '$xml';
+      this.valueKey = "$value";
+      this.xmlKey = "$xml";
       this.ignoredNamespaces = [];
     }
   }
 
   startElement(stack, nsName, attrs, options) {
-    if (!this.constructor.allowedChildren)
-      return;
+    if (!this.constructor.allowedChildren) return;
 
     var child;
     var parent = stack[stack.length - 1];
 
     var qname = this._qnameFor(stack, nsName, attrs, options);
     var ElementType = typeRegistry.getElementType(qname);
-    if (this.constructor.allowedChildren.indexOf(qname.name) === -1 &&
-      this.constructor.allowedChildren.indexOf('any') === -1) {
-      debug('Element %s is not allowed within %j', qname, this.nsName);
+    if (
+      this.constructor.allowedChildren.indexOf(qname.name) === -1 &&
+      this.constructor.allowedChildren.indexOf("any") === -1
+    ) {
+      debug("Element %s is not allowed within %j", qname, this.nsName);
     }
-    
+
     if (ElementType) {
       child = new ElementType(nsName, attrs, options);
       child.nsURI = qname.nsURI;
-      child.targetNamespace = attrs.targetNamespace || this.getTargetNamespace();
-      debug('Element created: ', child);
+      child.targetNamespace =
+        attrs.targetNamespace || this.getTargetNamespace();
+      debug("Element created: ", child);
       child.parent = parent;
       stack.push(child);
     } else {
@@ -105,8 +108,7 @@ class Element {
 
   endElement(stack, nsName) {
     if (this.nsName === nsName) {
-      if (stack.length < 2)
-        return;
+      if (stack.length < 2) return;
       var parent = stack[stack.length - 2];
       if (this !== stack[0]) {
         helper.extend(stack[0].xmlns, this.xmlns);
@@ -133,7 +135,9 @@ class Element {
   }
 
   unexpected(name) {
-    throw new Error(g.f('Found unexpected element (%s) inside %s', name, this.nsName));
+    throw new Error(
+      g.f("Found unexpected element (%s) inside %s", name, this.nsName)
+    );
   }
 
   describe(definitions) {
@@ -146,7 +150,7 @@ class Element {
    * @returns {string} Namespace
    */
   getNamespaceURI(prefix) {
-    if (prefix === 'xml') return helper.namespaces.xml;
+    if (prefix === "xml") return helper.namespaces.xml;
     var nsURI = null;
     if (this.xmlns && prefix in this.xmlns) {
       nsURI = this.xmlns[prefix];
@@ -189,53 +193,55 @@ class Element {
   resolveSchemaObject(schemas, elementType, nsName) {
     var qname = QName.parse(nsName);
     var nsURI;
-    if (qname.prefix === 'xml') return null;
+    if (qname.prefix === "xml") return null;
     if (qname.prefix) nsURI = this.getNamespaceURI(qname.prefix);
     else nsURI = this.getTargetNamespace();
     qname.nsURI = nsURI;
     var name = qname.name;
-    if (nsURI === helper.namespaces.xsd &&
-      (elementType === 'simpleType' || elementType === 'type')) {
+    if (
+      nsURI === helper.namespaces.xsd &&
+      (elementType === "simpleType" || elementType === "type")
+    ) {
       return xsd.getBuiltinType(name);
     }
     var schema = schemas[nsURI];
     if (!schema) {
-      debug('Schema not found: %s (%s)', qname, elementType);
+      debug("Schema not found: %s (%s)", qname, elementType);
       return null;
     }
     var found = null;
     switch (elementType) {
-      case 'element':
+      case "element":
         found = schema.elements[name];
         break;
-      case 'type':
+      case "type":
         found = schema.complexTypes[name] || schema.simpleTypes[name];
         break;
-      case 'simpleType':
+      case "simpleType":
         found = schema.simpleTypes[name];
         break;
-      case 'complexType':
+      case "complexType":
         found = schema.complexTypes[name];
         break;
-      case 'group':
+      case "group":
         found = schema.groups[name];
         break;
-      case 'attribute':
+      case "attribute":
         found = schema.attributes[name];
         break;
-      case 'attributeGroup':
+      case "attributeGroup":
         found = schema.attributeGroups[name];
         break;
     }
     if (!found) {
-      debug('Schema %s not found: %s %s', elementType, nsURI, nsName);
+      debug("Schema %s not found: %s %s", elementType, nsURI, nsName);
       return null;
     }
     return found;
   }
 
   postProcess(definitions) {
-    debug('Unknown element: %s %s', this.nsURI, this.nsName)
+    debug("Unknown element: %s %s", this.nsURI, this.nsName);
   }
 }
 

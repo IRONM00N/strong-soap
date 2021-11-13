@@ -3,11 +3,11 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var WSDLElement = require('./wsdlElement');
-var QName = require('../qname');
-var debug = require('debug')('strong-soap:wsdl:parameter');
+var WSDLElement = require("./wsdlElement");
+var QName = require("../qname");
+var debug = require("debug")("strong-soap:wsdl:parameter");
 
 /**
  * Base class for Input/Output
@@ -19,13 +19,13 @@ class Parameter extends WSDLElement {
 
   addChild(child) {
     // soap:body
-    if (child.name === 'body') {
+    if (child.name === "body") {
       this.body = child;
-    } else if (child.name === 'header') {
+    } else if (child.name === "header") {
       this.headers = this.headers || [];
       // soap:header
       this.headers.push(child);
-    } else if (child.name === 'fault') {
+    } else if (child.name === "fault") {
       //Revisit. Never gets executed.
       this.fault = child;
     }
@@ -33,20 +33,20 @@ class Parameter extends WSDLElement {
 
   postProcess(definitions) {
     // portType.operation.*
-    if (this.parent.parent.name === 'portType') {
+    if (this.parent.parent.name === "portType") {
       // Resolve $message
       var messageName = QName.parse(this.$message).name;
       var message = definitions.messages[messageName];
       if (!message) {
-        console.error('Unable to resolve message %s for', this.$message, this);
-        throw new Error('Unable to resolve message ' + this.$message);
+        console.error("Unable to resolve message %s for", this.$message, this);
+        throw new Error("Unable to resolve message " + this.$message);
       }
       message.postProcess(definitions);
       this.message = message;
     }
 
     // binding.operation.*
-    if (this.parent.parent.name === 'binding') {
+    if (this.parent.parent.name === "binding") {
       if (this.body) {
         if (this.body.$parts) {
           this.body.parts = {};
@@ -70,7 +70,7 @@ class Parameter extends WSDLElement {
             if (message) {
               message.postProcess(definitions);
             } else {
-              debug('Message not found: ', header.$message);
+              debug("Message not found: ", header.$message);
             }
           } else {
             message = this.message;
@@ -82,7 +82,7 @@ class Parameter extends WSDLElement {
       }
       //Revisit.. this.name is always undefined because there is no code which calls addChild(..) with child.name = 'fault.
       //code works inspite of not executing this block. Remove it?
-      if (this.name === 'fault') {
+      if (this.name === "fault") {
         let message = this.fault.parent.message;
         if (message) {
           message.postProcess(definitions);
@@ -92,7 +92,7 @@ class Parameter extends WSDLElement {
             break;
           }
         } else {
-          debug('Message not found: ', this.fault.$message);
+          debug("Message not found: ", this.fault.$message);
         }
       }
     }
@@ -100,10 +100,10 @@ class Parameter extends WSDLElement {
 }
 
 Parameter.allowedChildren = [
-  'body',
-  'SecuritySpecRef',
-  'documentation',
-  'header'
+  "body",
+  "SecuritySpecRef",
+  "documentation",
+  "header",
 ];
 
 module.exports = Parameter;

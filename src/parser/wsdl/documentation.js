@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var WSDLElement = require('./wsdlElement');
+var WSDLElement = require("./wsdlElement");
 
 class Documentation extends WSDLElement {
   constructor(nsName, attrs, options) {
@@ -13,7 +13,7 @@ class Documentation extends WSDLElement {
   }
 }
 
-Documentation.elementName = 'documentation';
+Documentation.elementName = "documentation";
 Documentation.allowedChildren = [];
 
 module.exports = Documentation;

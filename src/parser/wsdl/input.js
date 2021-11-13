@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var Parameter = require('./parameter');
+var Parameter = require("./parameter");
 
 class Input extends Parameter {
   constructor(nsName, attrs, options) {
@@ -13,6 +13,6 @@ class Input extends Parameter {
   }
 }
 
-Input.elementName = 'input';
+Input.elementName = "input";
 
 module.exports = Input;

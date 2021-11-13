@@ -3,18 +3,18 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var XSDElement = require('./xsdElement');
+var XSDElement = require("./xsdElement");
 
 class AttributeGroup extends XSDElement {
   constructor(nsName, attrs, options) {
     super(nsName, attrs, options);
   }
-  
+
   resolve(schemas) {
     if (this.$ref) {
-      this.ref = this.resolveSchemaObject(schemas, 'attributeGroup', this.$ref);
+      this.ref = this.resolveSchemaObject(schemas, "attributeGroup", this.$ref);
     }
   }
 
@@ -29,8 +29,12 @@ class AttributeGroup extends XSDElement {
   }
 }
 
-AttributeGroup.elementName = 'attributeGroup';
-AttributeGroup.allowedChildren = ['annotation', 'attribute', 'attributeGroup',
-  'anyAttribute'];
+AttributeGroup.elementName = "attributeGroup";
+AttributeGroup.allowedChildren = [
+  "annotation",
+  "attribute",
+  "attributeGroup",
+  "anyAttribute",
+];
 
 module.exports = AttributeGroup;

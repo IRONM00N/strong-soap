@@ -3,7 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
 // Primitive data types
 var primitiveDataTypes = {
@@ -25,7 +25,7 @@ var primitiveDataTypes = {
   base64Binary: String,
   anyURI: String,
   QName: String,
-  NOTATION: String
+  NOTATION: String,
 };
 
 // Derived data types
@@ -54,7 +54,7 @@ var derivedDataTypes = {
   unsignedInt: Number,
   unsignedShort: Number,
   unsignedByte: Number,
-  positiveInteger: Number
+  positiveInteger: Number,
 };
 
 // Built-in data types
@@ -68,46 +68,46 @@ for (let s in derivedDataTypes) {
 }
 
 var namespaces = {
-  wsdl: 'http://schemas.xmlsoap.org/wsdl/',
-  soap: 'http://schemas.xmlsoap.org/wsdl/soap/',
-  soap12: 'http://schemas.xmlsoap.org/wsdl/soap12/',
-  http: 'http://schemas.xmlsoap.org/wsdl/http/',
-  mime: 'http://schemas.xmlsoap.org/wsdl/mime/',
-  soapenc: 'http://schemas.xmlsoap.org/soap/encoding/',
-  soapenv: 'http://schemas.xmlsoap.org/soap/envelope/',
-  xsi_rc: 'http://www.w3.org/2000/10/XMLSchema-instance',
-  xsd_rc: 'http://www.w3.org/2000/10/XMLSchema',
-  xsd: 'http://www.w3.org/2001/XMLSchema',
-  xsi: 'http://www.w3.org/2001/XMLSchema-instance',
-  xml: 'http://www.w3.org/XML/1998/namespace'
+  wsdl: "http://schemas.xmlsoap.org/wsdl/",
+  soap: "http://schemas.xmlsoap.org/wsdl/soap/",
+  soap12: "http://schemas.xmlsoap.org/wsdl/soap12/",
+  http: "http://schemas.xmlsoap.org/wsdl/http/",
+  mime: "http://schemas.xmlsoap.org/wsdl/mime/",
+  soapenc: "http://schemas.xmlsoap.org/soap/encoding/",
+  soapenv: "http://schemas.xmlsoap.org/soap/envelope/",
+  xsi_rc: "http://www.w3.org/2000/10/XMLSchema-instance",
+  xsd_rc: "http://www.w3.org/2000/10/XMLSchema",
+  xsd: "http://www.w3.org/2001/XMLSchema",
+  xsi: "http://www.w3.org/2001/XMLSchema-instance",
+  xml: "http://www.w3.org/XML/1998/namespace",
 };
 
 function xmlEscape(obj) {
-  if (typeof obj === 'string') {
-    if (obj.substr(0, 9) === '<![CDATA[' && obj.substr(-3) === "]]>") {
+  if (typeof obj === "string") {
+    if (obj.substr(0, 9) === "<![CDATA[" && obj.substr(-3) === "]]>") {
       return obj;
     }
     return obj
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&apos;');
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&apos;");
   }
 
   return obj;
 }
 
-var crypto = require('crypto');
+var crypto = require("crypto");
 exports.passwordDigest = function passwordDigest(nonce, created, password) {
   // digest = base64 ( sha1 ( nonce + created + password ) )
-  var pwHash = crypto.createHash('sha1');
-  var rawNonce = Buffer.from(nonce || '', 'base64').toString('binary');
+  var pwHash = crypto.createHash("sha1");
+  var rawNonce = Buffer.from(nonce || "", "base64").toString("binary");
   pwHash.update(rawNonce + created + password);
-  return pwHash.digest('base64');
+  return pwHash.digest("base64");
 };
 
-var EMPTY_PREFIX = ''; // Prefix for targetNamespace
+var EMPTY_PREFIX = ""; // Prefix for targetNamespace
 
 exports.EMPTY_PREFIX = EMPTY_PREFIX;
 
@@ -117,20 +117,22 @@ exports.EMPTY_PREFIX = EMPTY_PREFIX;
  * @param {*} nsURI value
  * @returns {String} The matching key
  */
-exports.findPrefix = function(xmlnsMapping, nsURI) {
+exports.findPrefix = function (xmlnsMapping, nsURI) {
   for (var n in xmlnsMapping) {
     if (n === EMPTY_PREFIX) continue;
-    if (xmlnsMapping[n] === nsURI)
-      return n;
+    if (xmlnsMapping[n] === nsURI) return n;
   }
 };
 
 exports.extend = function extend(base, obj) {
-  if (base !== null && typeof base === "object" &&
-    obj !== null && typeof obj === "object") {
-    Object.keys(obj).forEach(function(key) {
-      if (!base.hasOwnProperty(key))
-        base[key] = obj[key];
+  if (
+    base !== null &&
+    typeof base === "object" &&
+    obj !== null &&
+    typeof obj === "object"
+  ) {
+    Object.keys(obj).forEach(function (key) {
+      if (!base.hasOwnProperty(key)) base[key] = obj[key];
     });
   }
   return base;
@@ -142,7 +144,7 @@ exports.namespaces = namespaces;
 
 class _Set {
   constructor() {
-    this.set = typeof Set === 'function' ? new Set() : [];
+    this.set = typeof Set === "function" ? new Set() : [];
   }
 
   add(val) {
@@ -166,4 +168,3 @@ class _Set {
 }
 
 exports.Set = _Set;
-

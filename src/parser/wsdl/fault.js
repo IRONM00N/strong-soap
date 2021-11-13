@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var Parameter = require('./parameter');
+var Parameter = require("./parameter");
 
 class Fault extends Parameter {
   constructor(nsName, attrs, options) {
@@ -13,7 +13,7 @@ class Fault extends Parameter {
   }
 }
 
-Fault.elementName = 'fault';
-Fault.allowedChildren = ['documentation', 'fault'];
+Fault.elementName = "fault";
+Fault.allowedChildren = ["documentation", "fault"];
 
 module.exports = Fault;

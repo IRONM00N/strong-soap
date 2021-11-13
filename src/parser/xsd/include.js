@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var XSDElement = require('./xsdElement');
+var XSDElement = require("./xsdElement");
 
 class Include extends XSDElement {
   constructor(nsName, attrs, options) {
@@ -13,7 +13,6 @@ class Include extends XSDElement {
   }
 }
 
-
-Include.elementName = 'include';
+Include.elementName = "include";
 
 module.exports = Include;

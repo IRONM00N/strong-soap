@@ -3,22 +3,24 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var assert = require('assert');
-var QName = require('../qname');
+var assert = require("assert");
+var QName = require("../qname");
 
 /**
  * Descriptor for an XML attribute
  */
 class AttributeDescriptor {
   constructor(qname, type, form) {
-    assert(qname == null || qname instanceof QName, 'Invalid qname: ' + qname);
+    assert(qname == null || qname instanceof QName, "Invalid qname: " + qname);
     this.qname = qname;
     this.type = type;
-    form = form || 'qualified';
-    assert(form === 'qualified' || form === 'unqualified',
-      'Invalid form: ' + form);
+    form = form || "qualified";
+    assert(
+      form === "qualified" || form === "unqualified",
+      "Invalid form: " + form
+    );
     this.form = form;
   }
 }
@@ -58,7 +60,7 @@ class TypeDescriptor {
         this.addAttribute(item.attributes[i]);
       }
       if (item.extension) {
-          this.extension = item.extension;
+        this.extension = item.extension;
       }
     }
   }
@@ -95,12 +97,14 @@ class TypeDescriptor {
 class ElementDescriptor extends TypeDescriptor {
   constructor(qname, type, form, isMany) {
     super();
-    assert(qname == null || qname instanceof QName, 'Invalid qname: ' + qname);
+    assert(qname == null || qname instanceof QName, "Invalid qname: " + qname);
     this.qname = qname;
     this.type = type;
-    form = form || 'qualified';
-    assert(form === 'qualified' || form === 'unqualified',
-      'Invalid form: ' + form);
+    form = form || "qualified";
+    assert(
+      form === "qualified" || form === "unqualified",
+      "Invalid form: " + form
+    );
     this.form = form;
     this.isMany = !!isMany;
     this.isSimple = false;
@@ -108,7 +112,7 @@ class ElementDescriptor extends TypeDescriptor {
 
   clone(isMany) {
     // Check if the referencing element or this element has 'maxOccurs>1'
-    isMany = (!!isMany) || this.isMany;
+    isMany = !!isMany || this.isMany;
     var copy = new ElementDescriptor(this.qname, this.type, this.form, isMany);
     copy.isNillable = this.isNillable;
     copy.isSimple = this.isSimple;
@@ -124,6 +128,5 @@ class ElementDescriptor extends TypeDescriptor {
 module.exports = {
   ElementDescriptor: ElementDescriptor,
   AttributeDescriptor: AttributeDescriptor,
-  TypeDescriptor: TypeDescriptor
+  TypeDescriptor: TypeDescriptor,
 };
-

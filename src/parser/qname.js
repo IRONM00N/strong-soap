@@ -3,10 +3,10 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var g = require('../globalize');
-var assert = require('assert');
+var g = require("../globalize");
+var assert = require("assert");
 var qnameExp = /^(?:\{([^\{\}]*)\})?(?:([^\{\}]+):)?([^\{\}\:]+)$/;
 
 class QName {
@@ -22,25 +22,28 @@ class QName {
    */
   constructor(nsURI, name, prefix) {
     if (arguments.length === 1) {
-      assert.equal(typeof nsURI, 'string',
-        'The qname must be string in form of {nsURI}prefix:name');
+      assert.equal(
+        typeof nsURI,
+        "string",
+        "The qname must be string in form of {nsURI}prefix:name"
+      );
       let qname;
-      if (qname = qnameExp.exec(nsURI)) {
-        this.nsURI = qname[1] || '';
-        this.prefix = qname[2] || '';
-        this.name = qname[3] || '';
+      if ((qname = qnameExp.exec(nsURI))) {
+        this.nsURI = qname[1] || "";
+        this.prefix = qname[2] || "";
+        this.name = qname[3] || "";
       } else {
-        throw new Error(g.f('Invalid qname: %s', nsURI));
+        throw new Error(g.f("Invalid qname: %s", nsURI));
       }
     } else {
-      this.nsURI = nsURI || '';
-      this.name = name || '';
+      this.nsURI = nsURI || "";
+      this.name = name || "";
       if (!prefix) {
-        let parts = this.name.split(':');
+        let parts = this.name.split(":");
         this.name = parts[0];
         this.prefix = parts[1];
       } else {
-        this.prefix = prefix || '';
+        this.prefix = prefix || "";
       }
     }
   }
@@ -50,12 +53,12 @@ class QName {
    * @returns {string}
    */
   toString() {
-    var str = '';
+    var str = "";
     if (this.nsURI) {
-      str = '{' + this.nsURI + '}';
+      str = "{" + this.nsURI + "}";
     }
     if (this.prefix) {
-      str += this.prefix + ':';
+      str += this.prefix + ":";
     }
     str += this.name;
     return str;
@@ -68,17 +71,17 @@ class QName {
    * @returns {QName}
    */
   static parse(qname, nsURI) {
-    qname = qname || '';
+    qname = qname || "";
     var result = new QName(qname);
     var uri;
     if (nsURI == null) {
-      uri = '';
-    } else if (typeof nsURI === 'string') {
+      uri = "";
+    } else if (typeof nsURI === "string") {
       uri = nsURI;
-    } else if (typeof nsURI.getNamespaceURI === 'function') {
+    } else if (typeof nsURI.getNamespaceURI === "function") {
       uri = nsURI.getNamespaceURI(result.prefix);
     } else {
-      uri = '';
+      uri = "";
     }
     if (uri) {
       result.nsURI = uri;
@@ -88,4 +91,3 @@ class QName {
 }
 
 module.exports = QName;
-

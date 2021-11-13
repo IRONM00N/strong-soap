@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var XSDElement = require('./xsdElement');
+var XSDElement = require("./xsdElement");
 
 class AnyAttribute extends XSDElement {
   constructor(nsName, attrs, options) {
@@ -13,6 +13,6 @@ class AnyAttribute extends XSDElement {
   }
 }
 
-AnyAttribute.elementName = 'anyAttribute';
+AnyAttribute.elementName = "anyAttribute";
 
 module.exports = AnyAttribute;

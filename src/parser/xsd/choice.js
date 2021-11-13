@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var XSDElement = require('./xsdElement');
+var XSDElement = require("./xsdElement");
 
 class Choice extends XSDElement {
   constructor(nsName, attrs, options) {
@@ -13,8 +13,14 @@ class Choice extends XSDElement {
   }
 }
 
-Choice.elementName = 'choice';
-Choice.allowedChildren = ['annotation', 'element', 'group', 'sequence',
-  'choice', 'any'];
+Choice.elementName = "choice";
+Choice.allowedChildren = [
+  "annotation",
+  "element",
+  "group",
+  "sequence",
+  "choice",
+  "any",
+];
 
 module.exports = Choice;

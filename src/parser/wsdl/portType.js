@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var WSDLElement = require('./wsdlElement');
+var WSDLElement = require("./wsdlElement");
 
 class PortType extends WSDLElement {
   constructor(nsName, attrs, options) {
@@ -16,11 +16,9 @@ class PortType extends WSDLElement {
     if (this.operations) return;
     this.operations = {};
     var children = this.children;
-    if (typeof children === 'undefined')
-      return;
-    for (var i = 0, child; child = children[i]; i++) {
-      if (child.name !== 'operation')
-        continue;
+    if (typeof children === "undefined") return;
+    for (var i = 0, child; (child = children[i]); i++) {
+      if (child.name !== "operation") continue;
       child.postProcess(definitions);
       this.operations[child.$name] = child;
     }
@@ -33,10 +31,10 @@ class PortType extends WSDLElement {
       operations[name] = method.describe(definitions);
     }
     return operations;
-  };
+  }
 }
 
-PortType.elementName = 'portType';
-PortType.allowedChildren = ['operation', 'documentation'];
+PortType.elementName = "portType";
+PortType.allowedChildren = ["operation", "documentation"];
 
 module.exports = PortType;

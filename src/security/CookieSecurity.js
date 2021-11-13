@@ -3,12 +3,12 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var Security = require('./security');
+var Security = require("./security");
 
-function hasCookieHeader (cookie) {
-  return typeof cookie === 'object' && cookie.hasOwnProperty('set-cookie');
+function hasCookieHeader(cookie) {
+  return typeof cookie === "object" && cookie.hasOwnProperty("set-cookie");
 }
 
 /*
@@ -18,11 +18,11 @@ class CookieSecurity extends Security {
   constructor(cookie, options) {
     super(options);
 
-    cookie = hasCookieHeader(cookie) ? cookie['set-cookie'] : cookie;
+    cookie = hasCookieHeader(cookie) ? cookie["set-cookie"] : cookie;
 
     this.cookie = (Array.isArray(cookie) ? cookie : [cookie])
-      .map(c => c.split(';')[0])
-      .join('; ');
+      .map((c) => c.split(";")[0])
+      .join("; ");
   }
 
   addHttpHeaders(headers) {

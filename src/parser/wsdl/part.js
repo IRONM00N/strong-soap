@@ -3,22 +3,28 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var WSDLElement = require('./wsdlElement');
+var WSDLElement = require("./wsdlElement");
 
 class Part extends WSDLElement {
   constructor(nsName, attrs, options) {
     super(nsName, attrs, options);
   }
-  
+
   postProcess(definitions) {
     if (this.$element) {
       this.element = this.resolveSchemaObject(
-        definitions.schemas, 'element', this.$element);
+        definitions.schemas,
+        "element",
+        this.$element
+      );
     } else if (this.$type) {
       this.type = this.resolveSchemaObject(
-        definitions.schemas, 'type', this.$type);
+        definitions.schemas,
+        "type",
+        this.$type
+      );
     }
   }
 
@@ -35,6 +41,6 @@ class Part extends WSDLElement {
   }
 }
 
-Part.elementName = 'part';
+Part.elementName = "part";
 
 module.exports = Part;

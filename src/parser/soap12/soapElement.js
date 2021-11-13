@@ -3,18 +3,22 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var Element = require('../element');
+var Element = require("../element");
 
 class SOAPElement extends Element {
   constructor(nsName, attrs, options) {
     super(nsName, attrs, options);
 
-    if(this.name === 'body' || this.name === 'header' ||
-      this.name === 'fault' || this.name === 'headerfault') {
+    if (
+      this.name === "body" ||
+      this.name === "header" ||
+      this.name === "fault" ||
+      this.name === "headerfault"
+    ) {
       this.use = this.$use;
-      if (this.use === 'encoded') {
+      if (this.use === "encoded") {
         this.encodingStyle = this.$encodingStyle;
       }
       // The namespace attribute of soap:body will be used for RPC style
@@ -25,6 +29,6 @@ class SOAPElement extends Element {
 }
 
 SOAPElement.targetNamespace = Element.namespaces.soap12;
-SOAPElement.allowedChildren = ['documentation'];
+SOAPElement.allowedChildren = ["documentation"];
 
 module.exports = SOAPElement;

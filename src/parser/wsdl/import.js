@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var WSDLElement = require('./wsdlElement');
+var WSDLElement = require("./wsdlElement");
 
 class Import extends WSDLElement {
   constructor(nsName, attrs, options) {
@@ -14,6 +14,6 @@ class Import extends WSDLElement {
   }
 }
 
-Import.elementName = 'import';
+Import.elementName = "import";
 
 module.exports = Import;

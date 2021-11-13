@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var _ = require('lodash');
+var _ = require("lodash");
 
 /**
  * Base class for Web Services Security
@@ -17,16 +17,13 @@ class Security {
 
   addOptions(options) {
     _.merge(options, this.options);
-  };
-
-  addHttpHeaders(headers) {
   }
 
-  addSoapHeaders(headerElement) {
-  }
+  addHttpHeaders(headers) {}
 
-  postProcess(envelopeElement, headerElement, bodyElement) {
-  }
+  addSoapHeaders(headerElement) {}
+
+  postProcess(envelopeElement, headerElement, bodyElement) {}
 }
 
 module.exports = Security;

@@ -3,17 +3,17 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var assert = require('assert');
-var QName = require('./parser/qname');
+var assert = require("assert");
+var QName = require("./parser/qname");
 
 /**
  * Representation for soap elements
  */
 class SOAPElement {
   constructor(value, qname, options) {
-    if (typeof value === 'string' && !qname) {
+    if (typeof value === "string" && !qname) {
       this.xml = value;
     } else {
       this.value = value;
@@ -21,7 +21,6 @@ class SOAPElement {
       this.options = options || {};
     }
   }
-
 }
 
 /**
@@ -29,15 +28,15 @@ class SOAPElement {
  */
 class SOAPAttribute {
   constructor(value, qname) {
-    assert(qname, 'qname is required');
+    assert(qname, "qname is required");
     this.value = String(value);
     this.qname = qname;
   }
 
   addTo(parent, nsContext, xmlHandler) {
     var nsURI = nsContext.getNamespaceURI(this.qname.prefix);
-    if(nsURI === this.qname.nsURI) {
-      var name = this.qname.prefix + ':' + this.qname.name;
+    if (nsURI === this.qname.nsURI) {
+      var name = this.qname.prefix + ":" + this.qname.name;
       parent.attribute(name, this.value);
     } else {
       nsContext.declareNamespace(this.qname.prefix, this.qname.nsURI);

@@ -3,7 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-exports.QName = require('./qname');
-exports.NamespaceContext = require('./nscontext');
-exports.WSDL = require('./wsdl');
-exports.XMLHandler = require('./xmlHandler');
+exports.QName = require("./qname");
+exports.NamespaceContext = require("./nscontext");
+exports.WSDL = require("./wsdl");
+exports.XMLHandler = require("./xmlHandler");

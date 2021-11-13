@@ -3,9 +3,9 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var XSDElement = require('./xsdElement');
+var XSDElement = require("./xsdElement");
 
 class Group extends XSDElement {
   constructor(nsName, attrs, options) {
@@ -15,7 +15,7 @@ class Group extends XSDElement {
   postProcess(defintions) {
     var schemas = defintions.schemas;
     if (this.$ref) {
-      this.ref = this.resolveSchemaObject(schemas, 'group', this.$ref);
+      this.ref = this.resolveSchemaObject(schemas, "group", this.$ref);
     }
   }
 
@@ -30,7 +30,7 @@ class Group extends XSDElement {
   }
 }
 
-Group.elementName = 'group';
-Group.allowedChildren = ['annotation', 'all', 'choice', 'sequence'];
+Group.elementName = "group";
+Group.allowedChildren = ["annotation", "all", "choice", "sequence"];
 
 module.exports = Group;
