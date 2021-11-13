@@ -1,50 +1,50 @@
 {
   "UpdateProfileRequest": {
-  "Profile": {
-    "IDs": {
-      "UniqueID": [
-        {
-          "$attributes": {
-            "source": "TESTSOURCE"
-          },
-          "$value": 100
-        }
-      ]
-    },
-    "Phones": {
-      "NamePhone": [
-        {
-          "$attributes": {
-            "primary": true
-          },
-          "IDs": {
-            "UniqueID": [
-              {
-                "$attributes": {
-                  "source": "TEST"
-                },
-                "$value": 1
-              }
-            ]
+    "Profile": {
+      "IDs": {
+        "UniqueID": [
+          {
+            "$attributes": {
+              "source": "TESTSOURCE"
+            },
+            "$value": 100
           }
-        },
-        {
-          "$attributes": {
-            "primary": false
+        ]
+      },
+      "Phones": {
+        "NamePhone": [
+          {
+            "$attributes": {
+              "primary": true
+            },
+            "IDs": {
+              "UniqueID": [
+                {
+                  "$attributes": {
+                    "source": "TEST"
+                  },
+                  "$value": 1
+                }
+              ]
+            }
           },
-          "IDs": {
-            "UniqueID": [
-              {
-                "$attributes": {
-                  "source": "TEST"
-                },
-                "$value": 2
-              }
-            ]
+          {
+            "$attributes": {
+              "primary": false
+            },
+            "IDs": {
+              "UniqueID": [
+                {
+                  "$attributes": {
+                    "source": "TEST"
+                  },
+                  "$value": 2
+                }
+              ]
+            }
           }
-        }
-      ]
+        ]
+      }
     }
-  }
   }
 }

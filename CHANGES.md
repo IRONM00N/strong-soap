@@ -1,1128 +1,1017 @@
-2021-09-13, Version 3.3.1
-=========================
+# 2021-09-13, Version 3.3.1
 
- * fix: fixed installing the library from npm (Aliaksandr Krasitski)
+- fix: fixed installing the library from npm (Aliaksandr Krasitski)
 
-2021-09-13, Version 3.3.0
-=========================
+# 2021-09-13, Version 3.3.0
 
- * Typo in example server code. (Sam Graham)
- 
- * chore: enable sourcemaps (Rifa Achrinza)
+- Typo in example server code. (Sam Graham)
 
- * docs: add `ClientSSLSecurityPFX` to readme (Luan Raithz Machado)
+- chore: enable sourcemaps (Rifa Achrinza)
 
- * chore: bump xml-crypto 2.1.3 (Aliaksandr Krasitski)
+- docs: add `ClientSSLSecurityPFX` to readme (Luan Raithz Machado)
 
-2021-04-22, Version 3.2.1
-=========================
+- chore: bump xml-crypto 2.1.3 (Aliaksandr Krasitski)
 
- * Update pakcage lock (Jonathan Roberts)
+# 2021-04-22, Version 3.2.1
 
- * NTLM fixes and new tests (Jonathan Roberts)
+- Update pakcage lock (Jonathan Roberts)
 
+- NTLM fixes and new tests (Jonathan Roberts)
 
-2021-04-07, Version 3.2.0
-=========================
+# 2021-04-07, Version 3.2.0
 
+# 2021-04-07, Version 3.1.0
 
+- chore: update dependencies (Diana Lau)
 
-2021-04-07, Version 3.1.0
-=========================
+- add require globalize to fix broken call to g.f() (Stefan Seide)
 
- * chore: update dependencies (Diana Lau)
+# 2021-03-29, Version 3.0.1
 
- * add require globalize to fix broken call to g.f() (Stefan Seide)
+- bump/xml crypto 2.1.1 (Daniel Hillmann)
 
+# 2020-10-28, Version 3.0.0
 
-2021-03-29, Version 3.0.1
-=========================
+- feat: update dependencies (Raymond Feng)
 
- * bump/xml crypto 2.1.1 (Daniel Hillmann)
+- chore: update lodash (jannyHou)
 
+- chore: update CODEOWNERS (Diana Lau)
 
-2020-10-28, Version 3.0.0
-=========================
+- feat(client) add soapHeaders at run time (Mario Estrada)
 
- * feat: update dependencies (Raymond Feng)
+- Handle restrictions in anonymous simple types (Jonathan Roberts)
 
- * chore: update lodash (jannyHou)
+# 2020-03-25, Version 2.0.0
 
- * chore: update CODEOWNERS (Diana Lau)
+- Update client.js: add RPC suffixes (kimveasna)
 
- * feat(client) add soapHeaders at run time (Mario Estrada)
+- In light of review, check isMany in existing block (LoneRifle)
 
- * Handle restrictions in anonymous simple types (Jonathan Roberts)
+- Add tests for responses when maxOccurs=1 (LoneRifle)
 
+- xmlToJson: honor maxOccurs > 1 (LoneRifle)
 
-2020-03-25, Version 2.0.0
-=========================
+- De-lint - missing semicolons (LoneRifle)
 
- * Update client.js: add RPC suffixes (kimveasna)
+# 2020-02-25, Version 1.22.1
 
- * In light of review, check isMany in existing block (LoneRifle)
+- Allow nillable date to be null (Richard Sunbury)
 
- * Add tests for responses when maxOccurs=1 (LoneRifle)
+- chore: remove unused require statements (Raymond Feng)
 
- * xmlToJson: honor maxOccurs > 1 (LoneRifle)
+# 2020-02-10, Version 1.22.0
 
- * De-lint - missing semicolons (LoneRifle)
+- chore: add package-lock.json (Raymond Feng)
 
+- Remove unnecessary files from npm packages (Avindra Goolcharan)
 
-2020-02-25, Version 1.22.1
-==========================
+- fixed formating in README (Christopher Wade)
 
- * Allow nillable date to be null (Richard Sunbury)
+- chore: add stalebot (Diana Lau)
 
- * chore: remove unused require statements (Raymond Feng)
+- Avoid line feed problems (Win/Linux) (Christian Herzog)
 
+# 2019-07-19, Version 1.21.0
 
-2020-02-10, Version 1.22.0
-==========================
+- add support attachments (Allan Marques)
 
- * chore: add package-lock.json (Raymond Feng)
+# 2019-06-03, Version 1.20.0
 
- * Remove unnecessary files from npm packages (Avindra Goolcharan)
+- Replace ursa with node 12 core crypto or node-rsa (Raymond Feng)
 
- * fixed formating in README (Christopher Wade)
+- chore: update copyrights years (Agnes Lin)
 
- * chore: add stalebot (Diana Lau)
+- Add support for 1/0 booleans (Stefano Marotta)
 
- * Avoid line feed problems (Win/Linux) (Christian Herzog)
+- fix: update lodash (jannyHou)
 
+# 2019-05-02, Version 1.19.1
 
-2019-07-19, Version 1.21.0
-==========================
+- Use Buffer.from to replace depreated new Buffer (Raymond Feng)
 
- * add support attachments (Allan Marques)
+- Fix xml date/time/dateTime conversion (Raymond Feng)
 
+- Replace deprecated Buffer api (Raymond Feng)
 
-2019-06-03, Version 1.20.0
-==========================
+- Add promise based stubs for testing (Rijnhard Hessel)
 
- * Replace ursa with node 12 core crypto or node-rsa (Raymond Feng)
+# 2019-04-29, Version 1.19.0
 
- * chore: update copyrights years (Agnes Lin)
+- Upgrade dependencies (Raymond Feng)
 
- * Add support for 1/0 booleans (Stefano Marotta)
+# 2019-03-28, Version 1.18.0
 
- * fix: update lodash (jannyHou)
+- chore: upgrade deps (Raymond Feng)
 
+- Tests for parseValue with xsd date dateTime (arthmoeros)
 
-2019-05-02, Version 1.19.1
-==========================
+- Fix for xs:date with tz format (arthmoeros)
 
- * Use Buffer.from to replace depreated new Buffer (Raymond Feng)
+# 2019-02-21, Version 1.17.0
 
- * Fix xml date/time/dateTime conversion (Raymond Feng)
+- Fix use options.request in wsdl.js (JB)
 
- * Replace deprecated Buffer api (Raymond Feng)
+# 2019-02-14, Version 1.16.0
 
- * Add promise based stubs for testing (Rijnhard Hessel)
+- Update version of httpntlm (Jon Roberts)
 
+# 2019-01-22, Version 1.15.0
 
-2019-04-29, Version 1.19.0
-==========================
+- Adding enforce restrictions option (Romeu Palos de Gouvea)
 
- * Upgrade dependencies (Raymond Feng)
+# 2018-10-18, Version 1.14.0
 
+- Update CODEOWNERS (Raymond Feng)
 
-2019-03-28, Version 1.18.0
-==========================
+- Rename test so it gets run (Jon Roberts)
 
- * chore: upgrade deps (Raymond Feng)
+- Return error via callback (Jon Roberts)
 
- * Tests for parseValue with xsd date dateTime (arthmoeros)
+# 2018-10-12, Version 1.13.2
 
- * Fix for xs:date with tz format (arthmoeros)
+- changed this.soapActionRequired to boolean (Vineet Jain)
 
+- Support of sending soapAction in v1.2 (Vineet Jain)
 
-2019-02-21, Version 1.17.0
-==========================
+# 2018-09-24, Version 1.13.1
 
- * Fix use options.request in wsdl.js (JB)
+- Add tests to cover maxOccurs (Jon Roberts)
 
+- Change to isMany logic (Jon Roberts)
 
-2019-02-14, Version 1.16.0
-==========================
+# 2018-09-17, Version 1.13.0
 
- * Update version of httpntlm (Jon Roberts)
+- Update ssl key/cert to pass node 10 (Raymond Feng)
 
+- Update` strong-globalize` to v4.1.1 (Runrioter Wung)
 
-2019-01-22, Version 1.15.0
-==========================
+- Switch to strong-ursa to support Node 10 (Raymond Feng)
 
- * Adding enforce restrictions option (Romeu Palos de Gouvea)
+- Add ability to load in a sync way (DomStorey)
 
+- Add the ability to loadSync (DomStorey)
 
-2018-10-18, Version 1.14.0
-==========================
+- fix code blocks in readme.md with their type (Jiri Spac)
 
- * Update CODEOWNERS (Raymond Feng)
+- fix: use proper variable names (biniam)
 
- * Rename test so it gets run (Jon Roberts)
+# 2018-08-08, Version 1.12.1
 
- * Return error via callback (Jon Roberts)
+- Allow documentation tag under types (Jon Roberts)
 
+# 2018-08-06, Version 1.12.0
 
-2018-10-12, Version 1.13.2
-==========================
+- Create client from cached wsdl (Jon Roberts)
 
- * changed this.soapActionRequired to boolean (Vineet Jain)
+- add forgotten options to soap.listen(...) (Vladimir Latyshev)
 
- * Support of sending soapAction in v1.2 (Vineet Jain)
+# 2018-07-10, Version 1.11.0
 
+- Load a wsdl with no imports from the cache (Jon Roberts)
 
-2018-09-24, Version 1.13.1
-==========================
+# 2018-07-09, Version 1.10.0
 
- * Add tests to cover maxOccurs (Jon Roberts)
+- [WebFM] cs/pl/ru translation (candytangnb)
 
- * Change to isMany logic (Jon Roberts)
+- fix soap-stub example on README.md (Carlos Assis)
 
+# 2018-05-08, Version 1.9.0
 
-2018-09-17, Version 1.13.0
-==========================
+# 2018-05-07, Version 1.8.0
 
- * Update ssl key/cert to pass node 10 (Raymond Feng)
+- feat: add promise support for client operation (shimks)
 
- * Update` strong-globalize` to v4.1.1 (Runrioter Wung)
+# 2018-04-12, Version 1.7.0
 
- * Switch to strong-ursa to support Node 10 (Raymond Feng)
+- fix: add element text value (Raymond Feng)
 
- * Add ability to load in a sync way (DomStorey)
+# 2018-03-26, Version 1.6.2
 
- * Add the ability to loadSync (DomStorey)
+- fix xsd include/import recursive processing (Raymond Feng)
 
- * fix code blocks in readme.md with their type (Jiri Spac)
+# 2018-03-19, Version 1.6.1
 
- * fix: use proper variable names (biniam)
+- fix: add array check for concat (Raymond Feng)
 
+- build: drop node 4.x support (Raymond Feng)
 
-2018-08-08, Version 1.12.1
-==========================
+# 2018-03-16, Version 1.6.0
 
- * Allow documentation tag under types (Jon Roberts)
+- fix: improve wsdl types processing for multiple schemas (Raymond Feng)
 
+- chore: clean up deps (Raymond Feng)
 
-2018-08-06, Version 1.12.0
-==========================
+# 2018-01-31, Version 1.5.0
 
- * Create client from cached wsdl (Jon Roberts)
+- fix: upgrade deps (Raymond Feng)
 
- * add forgotten options to soap.listen(...) (Vladimir Latyshev)
+- fix: make sure xml elements are mapped based the order of xsd (Raymond Feng)
 
+- Fix Typo: RPC Literal (Thomas Richter)
 
-2018-07-10, Version 1.11.0
-==========================
+- check the original passwordDigest method fails against SoapUI output (Tom Hodder)
 
- * Load a wsdl with no imports from the cache (Jon Roberts)
+- revert formatting changes by format on save in vscode (Tom Hodder)
 
+- Updated passwordDigest method and related tests (Tom Hodder)
 
-2018-07-09, Version 1.10.0
-==========================
+- missing semi colons (Branden Horiuchi)
 
- * [WebFM] cs/pl/ru translation (candytangnb)
+- removed lodash dependency (Branden Horiuchi)
 
- * fix soap-stub example on README.md (Carlos Assis)
+- added CookieSecurity test (Branden Horiuchi)
 
+- better cookie parsing handle the case where the header for set-cookie is a string and not an array (Branden Horiuchi)
 
-2018-05-08, Version 1.9.0
-=========================
+- fixing header parse objects would not have been parsed (Branden Horiuchi)
 
+- added cookie security (Branden Horiuchi)
 
+# 2018-01-24, Version 1.4.2
 
-2018-05-07, Version 1.8.0
-=========================
+- fix: handle xsi:type for subtype mappng from json to xml (Raymond Feng)
 
- * feat: add promise support for client operation (shimks)
+# 2018-01-15, Version 1.4.1
 
+- make sure attribute descriptors are honored to map json to xml (Raymond Feng)
 
-2018-04-12, Version 1.7.0
-=========================
+# 2018-01-12, Version 1.4.0
 
- * fix: add element text value (Raymond Feng)
+- allow xsd:include to include a schema without target namespace (Raymond Feng)
 
+# 2018-01-03, Version 1.3.0
 
-2018-03-26, Version 1.6.2
-=========================
+- remove node 0.10/0.12 support (Raymond Feng)
 
- * fix xsd include/import recursive processing (Raymond Feng)
+- fix soap version detection (Raymond Feng)
 
+- Create Issue and PR Templates (#124) (Sakib Hasan)
 
-2018-03-19, Version 1.6.1
-=========================
+- Add CODEOWNER file (Diana Lau)
 
- * fix: add array check for concat (Raymond Feng)
+- update translation file (Diana Lau)
 
- * build: drop node 4.x support (Raymond Feng)
+# 2017-06-28, Version 1.2.6
 
+- removed process.env.PORT (rashmihunt)
 
-2018-03-16, Version 1.6.0
-=========================
+- fix ports (rashmihunt)
 
- * fix: improve wsdl types processing for multiple schemas (Raymond Feng)
+- Fix multiRef merging (Daniel Escoz)
 
- * chore: clean up deps (Raymond Feng)
+- travis: expand node version testing (Ryan Graham)
 
+- test: always run tests with coverage (Ryan Graham)
 
-2018-01-31, Version 1.5.0
-=========================
+- test: replace istanbul with nyc (Ryan Graham)
 
- * fix: upgrade deps (Raymond Feng)
+- pkg: use src for node 4 instead of transpiling (Ryan Graham)
 
- * fix: make sure xml elements are mapped based the order of xsd (Raymond Feng)
+- src: enforce strict-mode on all JS (Ryan Graham)
 
- * Fix Typo: RPC Literal (Thomas Richter)
+# 2017-06-14, Version 1.2.5
 
- * check the original passwordDigest method fails against SoapUI output (Tom Hodder)
+# 2017-06-14, Version 1.2.4
 
- * revert formatting changes by format on save in vscode (Tom Hodder)
+- removed old npm-debug.log (rashmihunt)
 
- * Updated passwordDigest method and related tests (Tom Hodder)
+- removed before_install (rashmihunt)
 
- * missing semi colons (Branden Horiuchi)
+- nillable for complexType (rashmihunt)
 
- * removed lodash dependency (Branden Horiuchi)
+- Remove .DS_Store (Tetsuo Seto)
 
- * added CookieSecurity test (Branden Horiuchi)
+# 2017-03-28, Version 1.2.3
 
- * better cookie parsing handle the case where the header for set-cookie is a string and not an array (Branden Horiuchi)
+- Add type information to simpletype (rashmihunt)
 
- * fixing header parse objects would not have been parsed (Branden Horiuchi)
+# 2017-03-20, Version 1.2.2
 
- * added cookie security (Branden Horiuchi)
+# 2017-03-20, Version 1.2.1
 
+- Readme changes to use stockquote (rashmihunt)
 
-2018-01-24, Version 1.4.2
-=========================
+# 2017-02-03, Version 1.2.0
 
- * fix: handle xsi:type for subtype mappng from json to xml (Raymond Feng)
+- more cleanup (crandmck)
 
+- Regenerate TOC and other cleanup (crandmck)
 
-2018-01-15, Version 1.4.1
-=========================
+- Create README.md (Rand McKinney)
 
- * make sure attribute descriptors are honored to map json to xml (Raymond Feng)
+- Delete Readme.md (Rand McKinney)
 
+- Create docs.json (Rand McKinney)
 
-2018-01-12, Version 1.4.0
-=========================
+- Fix array loop in operation (rashmihunt)
 
- * allow xsd:include to include a schema without target namespace (Raymond Feng)
+- Change capitalization of readme file (crandmck)
 
+- fix undefined descriptor in attribute (rashmihunt)
 
-2018-01-03, Version 1.3.0
-=========================
+- add stockquote example (rashmihunt)
 
- * remove node 0.10/0.12 support (Raymond Feng)
+- some formating fix (rashmihunt)
 
- * fix soap version detection (Raymond Feng)
+- assign http port dynamically in client-test.js (rashmihunt)
 
- * Create Issue and PR Templates (#124) (Sakib Hasan)
+- incresed timeout for tests (rashmihunt)
 
- * Add CODEOWNER file (Diana Lau)
+- initialize NTLMSecurity option to wsdl option (rashmihunt)
 
- * update translation file (Diana Lau)
+# 2016-12-15, Version 1.1.0
 
+- fixed a CI failure in downstream (rashmihunt)
 
-2017-06-28, Version 1.2.6
-=========================
+- updated debug statements (rashmihunt)
 
- * removed process.env.PORT (rashmihunt)
+- add prettyPrint to client options (rashmihunt)
 
- * fix ports (rashmihunt)
+- fixed downstream failing test (rashmihunt)
 
- * Fix multiRef merging (Daniel Escoz)
+- fixed a testcase failure (rashmihunt)
 
- * travis: expand node version testing (Ryan Graham)
+- support forcing soap version (rashmihunt)
 
- * test: always run tests with coverage (Ryan Graham)
+- Update tr translation file (Candy)
 
- * test: replace istanbul with nyc (Ryan Graham)
+- support correctly (rashmihunt)
 
- * pkg: use src for node 4 instead of transpiling (Ryan Graham)
+- Initial support for NTLM (#52) (Rashmi Hunt)
 
- * src: enforce strict-mode on all JS (Ryan Graham)
+- Update translation files (Candy)
 
+- removing CookieSecurity from this branch to keep PR's separate (Branden Horiuchi)
 
-2017-06-14, Version 1.2.5
-=========================
+- adding check for element length on outputBodyDescriptor (Branden Horiuchi)
 
+- - adding CookieSecurity to built-in security methods (Branden Horiuchi)
 
+- Add translation files (Candy)
 
-2017-06-14, Version 1.2.4
-=========================
+- added header to input operation (rashmihunt)
 
- * removed old npm-debug.log (rashmihunt)
+- fix for #31 (rashmihunt)
 
- * removed before_install (rashmihunt)
+- Using targetNamespace of the attribute if present (#32) (Guatom)
 
- * nillable for complexType (rashmihunt)
+# 2016-10-06, Version 1.0.2
 
- * Remove .DS_Store (Tetsuo Seto)
+- fixed debug level (rashmihunt)
 
+- debug support & fixed warning (rashmihunt)
 
-2017-03-28, Version 1.2.3
-=========================
+# 2016-09-30, Version 1.0.1
 
- * Add type information to simpletype (rashmihunt)
+- code review fixes (rashmihunt)
 
+- fixed wsdl-test failure (rashmihunt)
 
-2017-03-20, Version 1.2.2
-=========================
+- add babel script as prepublish (deepakrkris)
 
+- remove forceSoap12Headers wsdl option and reimplement (rashmihunt)
 
+# 2016-09-27, Version 1.0.0
 
-2017-03-20, Version 1.2.1
-=========================
+- Readme updates, cleanup of Examples & code (rashmihunt)
 
- * Readme changes to use stockquote (rashmihunt)
+- Add globalization (Candy)
 
+- fix for CI build errors (deepakrkris)
 
-2017-02-03, Version 1.2.0
-=========================
+- added code for soap 1.2 fault support, added a new test for soap 1.2 fault, fixed existing test cases (rashmihunt)
 
- * more cleanup (crandmck)
+- added support for soap 1.2 fault and added a test case for soap 1.2 fault (rashmihunt)
 
- * Regenerate TOC and other cleanup (crandmck)
+- regression for server-test (deepakrkris)
 
- * Create README.md (Rand McKinney)
+- regression fixes for wsdl-tests (deepakrkris)
 
- * Delete Readme.md (Rand McKinney)
+- fix regression errors for all test cases (deepakrkris)
 
- * Create docs.json (Rand McKinney)
+- Fixed soap 1.1 Fault path & enabled rest of the tests in wsdl-test.js (rashmihunt)
 
- * Fix array loop in operation (rashmihunt)
+- ignoring .DS_Store file (rashmihunt)
 
- * Change capitalization of readme file (crandmck)
+- check soap version for fault processing (rashmihunt)
 
- * fix undefined descriptor in attribute (rashmihunt)
+- fix test fails for request-response-samples (deepakrkris)
 
- * add stockquote example (rashmihunt)
+- Fixed support for imported wsdl scenario, converted wsdl-test.js to mocha test (rashmihunt)
 
- * some formating fix (rashmihunt)
+- Fixed support for Fault, added support for multiple faults in operation, added test cases (rashmihunt)
 
- * assign http port dynamically in client-test.js (rashmihunt)
+- added another set of test casesand fixed issues with server.js and client.js (rashmihunt)
 
- * incresed timeout for tests (rashmihunt)
+- fixed rpc path, added rpc/literal test, fixed an issue with wsdl (rashmihunt)
 
- * initialize NTLMSecurity option to wsdl option (rashmihunt)
+- fixed rpc path and added a test for rpc/literal style (rashmihunt)
 
+- Fixed test in ssl-test.js (rashmihunt)
 
-2016-12-15, Version 1.1.0
-=========================
+- enabled last set of tests from server-test.js (rashmihunt)
 
- * fixed a CI failure in downstream (rashmihunt)
+- Enabled more tests from server-test.js (rashmihunt)
 
- * updated debug statements (rashmihunt)
+- fixed code review comment (rashmihunt)
 
- * add prettyPrint to client options (rashmihunt)
+- Enabled another set of test cases in server-test.js (rashmihunt)
 
- * fixed downstream failing test (rashmihunt)
+- code review fixes - reverted back mapObject change, removed jasonToXML call after parseXML (rashmihunt)
 
- * fixed a testcase failure (rashmihunt)
+- Make babel transpliation a pretest script (Raymond Feng)
 
- * support forcing soap version (rashmihunt)
+- proper header support for client and server (rashmihunt)
 
- * Update tr translation file (Candy)
+- Fix exported modules (Raymond Feng)
 
- * support  correctly (rashmihunt)
+- derive soapHeader name from it's qname (rashmihunt)
 
- * Initial support for NTLM (#52) (Rashmi Hunt)
+- fixes for remaining tests to run successfully in client-test.js (rashmihunt)
 
- * Update translation files (Candy)
+- several fixes to enable failing tests in server-options-test and client-test (rashmihunt)
 
- * removing CookieSecurity from this branch to keep PR's separate (Branden Horiuchi)
+- 1.  Added missing function changeSoapHeader() in base.js and fixed assert logic in 2 tests in client-test.js (rashmihunt)
 
- * adding check for element length on outputBodyDescriptor (Branden Horiuchi)
+- missing selectn module require() statement (rashmihunt)
 
- * * adding CookieSecurity to built-in security methods (Branden Horiuchi)
+- Fixed null arg passing in client.\_invoke(), fixed server.js logic to derive operationName, outputName and fixed server-options-test to pass srapper oject in the request (rashmihunt)
 
- * Add translation files (Candy)
+- fixed naming convention for module exports in index.js at the top level and added checks for null and undefined (rashmihunt)
 
- * added header to input operation (rashmihunt)
+- added WSSecurity to module.export (rashmihunt)
 
- * fix for #31 (rashmihunt)
+- Initial test case fixes for feature/wsdl-parser branch changes (rashmihunt)
 
- * Using targetNamespace of the attribute if present (#32) (Guatom)
+- Refactor wsdl parsing into ES6 classes (Raymond Feng)
 
+- Update README and package.json (Raymond Feng)
 
-2016-10-06, Version 1.0.2
-=========================
+- Fix mustUnderstand value (Raymond Feng)
 
- * fixed debug level (rashmihunt)
+- Fix style warnings (Raymond Feng)
 
- * debug support & fixed warning (rashmihunt)
+- Mock up stream.destroy for Node 6.x (Raymond Feng)
 
+- Add nonce and soap:actor options for WSSecurity (Raymond Feng)
 
-2016-09-30, Version 1.0.1
-=========================
+- fixed the soap request envelop generation part when request has complex Type as root. (#849) (Phani Kiran Guttha)
 
- * code review fixes (rashmihunt)
+- gracefully handle errors while parsing xml in xmlToObject and resume the parser with p.resume() (#842) (Deepak Verma)
 
- * fixed wsdl-test failure (rashmihunt)
+- XSD import in WSDL files and relative path (server creation) - resubmit (#846) (Mark Bayfield)
 
- * add babel script as prepublish (deepakrkris)
+- Support array of certs for ClientSSLSecurity ca. (#841) (Albert J wong)
 
- * remove forceSoap12Headers wsdl option and reimplement (rashmihunt)
+- attribute value of body id in double quotes (#843) (Edwin van Meerendonk)
 
+- Bumping ursa to 0.9.4 (#836) (Michael)
 
-2016-09-27, Version 1.0.0
-=========================
+- Optionally add Created to wssecurity header (#833) (Jordan Klassen)
 
- * Readme updates, cleanup of Examples & code (rashmihunt)
+- Clean up brace style (#835) (Jordan Klassen)
 
- * Add globalization (Candy)
+- Fix custom http client not being used when fetching related resources (#834) (Jordan Klassen)
 
- * fix for CI build errors (deepakrkris)
+- Release v0.15.0 (Heinz Romirer)
 
- * added code for soap 1.2 fault support, added a new test for soap 1.2 fault, fixed existing test cases (rashmihunt)
+- Make ursa an optional dependency. (#832) (Leo Liang)
 
- * added support for soap 1.2 fault and added a test case for soap 1.2 fault (rashmihunt)
+- Fix issue of reference element in another namespace. (#831) (Leo Liang)
 
- * regression for server-test (deepakrkris)
+- Fix incorrect WSDL in CDATA test case. (#830) (Leo Liang)
 
- * regression fixes for wsdl-tests (deepakrkris)
+- Mock up cork/uncork to avoid test failure (#829) (Raymond Feng)
 
- * fix regression errors for all test cases (deepakrkris)
+- Fix issue from #787 (Leo Liang)
 
- * Fixed soap 1.1 Fault path & enabled rest of the tests in wsdl-test.js (rashmihunt)
+- - Adding basic CDATA support. (David)
 
- * ignoring .DS_Store file (rashmihunt)
+- Add missing document about `Client.setEndpoint()` (Leo Liang)
 
- * check soap version for fault processing (rashmihunt)
+- Generate TOC in readme file. (Leo Liang)
 
- * fix test fails for request-response-samples (deepakrkris)
+- Revert "Undo the changes which are refactoring." (Leo Liang)
 
- * Fixed support for imported wsdl scenario, converted wsdl-test.js to mocha test (rashmihunt)
+- Fix elementFormDefault handling. (#822) (Leo Liang)
 
- * Fixed support for Fault, added support for multiple faults in operation, added test cases (rashmihunt)
+- Added missing compress node module in package.json (pgAdmin)
 
- * added another set of test casesand fixed issues with server.js and client.js (rashmihunt)
+- Add the incoming message object to the client 'response' event (Pattrick Hueper)
 
- * fixed rpc path, added rpc/literal test, fixed an issue with wsdl (rashmihunt)
+- added note about keep-alive SOAP header workaround (kevincoleman)
 
- * fixed rpc path and added a test for rpc/literal style (rashmihunt)
+- Update http.js (volkmarbuehringer)
 
- * Fixed test in ssl-test.js (rashmihunt)
+- Release v0.14.0 (Heinz Romirer)
 
- * enabled last set of tests from server-test.js (rashmihunt)
+- Allows calling methods with callback as last param (Gabriel Montes)
 
- * Enabled more tests from server-test.js (rashmihunt)
+- Re-enable ignore base namespace option and fixed expected result for its unit test. (eugene-frb)
 
- * fixed code review comment (rashmihunt)
+- Avoids overwriting request headers with options in method invocation (Gabriel Montes)
 
- * Enabled another set of test cases in server-test.js (rashmihunt)
+- If {time: true} is passed as an option to request module, makeelapsedTime from response available as Client.lastElapsedTime (brycewjohnson)
 
- * code review fixes - reverted back mapObject change, removed jasonToXML call after parseXML (rashmihunt)
+- Allow to set a custom envelop (Baptiste Lecocq)
 
- * Make babel transpliation a pretest script (Raymond Feng)
+- Update soap.js (Liviu Seniuc)
 
- * proper header support for client and server (rashmihunt)
+- Documents custom options and headers on WSDL reqs (Gabriel Montes)
 
- * Fix exported modules (Raymond Feng)
+- Added support for XML rootNode namespace and xmlns definition parser overriding. (Jon Ciccone)
 
- * derive soapHeader name from it's qname (rashmihunt)
+- ignore whitespace only differences. make differences easier to spot. (CT Arrington)
 
- * fixes for remaining tests to run successfully in client-test.js (rashmihunt)
+- Added support for WSSecurity XML signing with x509 certificates. updated readme updated package.json with latest ursa version change minimum node requirement to 0.10 since many dependencies break with engine-strict=true under node 0.8 (Jon Ciccone)
 
- * several fixes to enable failing tests in server-options-test and client-test (rashmihunt)
+- Remove assertions around location of BEGIN CERTIFICATE and END CERTIFICATE (Joseph Junker)
 
- * 1) Added missing function changeSoapHeader() in base.js and fixed assert logic in 2 tests in client-test.js (rashmihunt)
+- Release v0.13.0 (Heinz Romirer)
 
- * missing selectn module require() statement (rashmihunt)
+- consider previous ignoredNamespaces option when processing includes (BJR Matos)
 
- * Fixed null arg passing in client._invoke(), fixed server.js logic to derive operationName, outputName and fixed server-options-test to pass srapper oject in the request (rashmihunt)
+- SOAP Headers for server response + a change method for both client & server (Michel D'HOOGE)
 
- * fixed naming convention for module exports in index.js at the top level and added checks for null and undefined (rashmihunt)
+- XML Declaration (Michel D'HOOGE)
 
- * added WSSecurity to module.export (rashmihunt)
+- Fixing wrong nsContext. (Mik13)
 
- * Initial test case fixes for feature/wsdl-parser branch changes (rashmihunt)
+- Adds server options hash example to Readme.md (Benjamin Albert)
 
- * Refactor wsdl parsing into ES6 classes (Raymond Feng)
+- Children may be empty resulting in a NPE (Tobias Neubert)
 
- * Update README and package.json (Raymond Feng)
+- Releave v0.12.0 (jsdevel)
 
- * Fix mustUnderstand value (Raymond Feng)
+- updating lodash to 3.x.x (jsdevel)
 
- * Fix style warnings (Raymond Feng)
+- Fix schema overwrite when include a xsd with <xsd:include> (Leo Liang)
 
- * Mock up stream.destroy for Node 6.x (Raymond Feng)
+- Release v0.11.4 (jsdevel)
 
- * Add nonce and soap:actor options for WSSecurity (Raymond Feng)
+- Adding coverage to .travis (jsdevel)
 
- * fixed the soap request envelop generation part when request has complex Type as root. (#849) (Phani Kiran Guttha)
+- Release v0.11.3 (jsdevel)
 
- * gracefully handle errors while parsing xml in xmlToObject and resume the parser with p.resume() (#842) (Deepak Verma)
+- Release v0.11.2 (jsdevel)
 
- * XSD import in WSDL files and relative path (server creation) - resubmit (#846) (Mark Bayfield)
+- Closes #733 and Fixes #707: Return null instead of empty object. (jsdevel)
 
- * Support array of certs for ClientSSLSecurity ca. (#841) (Albert J wong)
+- Overriding the namespace prefix with empty prefix (SunJang)
 
- * attribute value of body id in double quotes (#843) (Edwin van Meerendonk)
+- Adds commas and semicolons to listen(...) example (Benjamin Albert)
 
- * Bumping ursa to 0.9.4 (#836) (Michael)
+- Temporarily skiping test from #768. (jsdevel)
 
- * Optionally add Created to wssecurity header (#833) (Jordan Klassen)
+- Release v0.11.1 (jsdevel)
 
- * Clean up brace style (#835) (Jordan Klassen)
+- When a complexType and an element has the same name, and we set the element to a value, the element gets the wrong namespace (a new one, e.g. ns1), because the `findChildSchemaObject`-function returns the complexType, not the element. (Mik13)
 
- * Fix custom http client not being used when fetching related resources (#834) (Jordan Klassen)
+- improved 'https' pattern matching for local files with name starting with 'http' (Elijah Saounkine)
 
- * Release v0.15.0 (Heinz Romirer)
+- Handles SOAP result null output (Simon Elbaz)
 
- * Make ursa an optional dependency. (#832) (Leo Liang)
+- Remove SOAPAction http header in SOAP 1.2, extra header was causing some servers to trip (Michael Szlapa)
 
- * Fix issue of reference element in another namespace. (#831) (Leo Liang)
+- When an error occur, send HTTP 500 status code (Iván López)
 
- * Fix incorrect WSDL in CDATA test case. (#830) (Leo Liang)
+- Adding ClientSSLSecurityPFX for use in requests (Tom Gallacher)
 
- * Mock up cork/uncork to avoid test failure (#829) (Raymond Feng)
+- Fixed issue when an error was undefined: undefined (Tom Gallacher)
 
- * Fix issue from #787 (Leo Liang)
+- Add missing type attribute for PasswordText in WSSecurity and update related tests (wmcmurray)
 
- * * Adding basic CDATA support. (David)
+- Release v0.11.0 (jsdevel)
 
- * Add missing document about `Client.setEndpoint()` (Leo Liang)
+- pass req to service (Evan Tahler)
 
- * Generate TOC in readme file. (Leo Liang)
+- removed console logs (Mike Borozdin)
 
- * Revert "Undo the changes which are refactoring." (Leo Liang)
+- added the ability to add HTTP headers to the client. (Mike Borozdin)
 
- * Fix elementFormDefault handling. (#822) (Leo Liang)
+- Release v0.10.3 (jsdevel)
 
- * Added missing compress node module in package.json (pgAdmin)
+- Adding createErroringStub to soap-stub. (jsdevel)
 
- * Add the incoming message object to the client 'response' event (Pattrick Hueper)
+- Release v0.10.2 (jsdevel)
 
- * added note about keep-alive SOAP header workaround (kevincoleman)
+- Adding security to soap-stub. (jsdevel)
 
- * Update http.js (volkmarbuehringer)
+- Release v0.10.1 (jsdevel)
 
- * Release v0.14.0 (Heinz Romirer)
+- Adding soap-stub. (jsdevel)
 
- * Allows calling methods with callback as last param (Gabriel Montes)
+- add SOAP v1.2 support for client (Aleksey)
 
- * Re-enable ignore base namespace option and fixed expected result for its unit test. (eugene-frb)
+- Release v0.10.0 (jsdevel)
 
- * Avoids overwriting request headers with options in method invocation (Gabriel Montes)
+- Fix xml namespace/element/type handling (Raymond Feng)
 
- * If {time: true} is passed as an option to request module, makeelapsedTime from response available as Client.lastElapsedTime (brycewjohnson)
+- Release v0.9.5 (jsdevel)
 
- * Allow to set a custom envelop (Baptiste Lecocq)
+- Fixes 743, Allow circular XSD files to be loaded (Fabian Cook)
 
- * Update soap.js (Liviu Seniuc)
+- Timestamp is now optional (Jason D. Harper)
 
- * Documents custom options and headers on WSDL reqs (Gabriel Montes)
+- Formatting History.md 0.9.4 notes. (jsdevel)
 
- * Added support for XML rootNode namespace and xmlns definition parser overriding. (Jon Ciccone)
+- Release v0.9.4 (jsdevel)
 
- * ignore whitespace only differences. make differences easier to spot. (CT Arrington)
+- Adding gitter badge in preparation of disabling issues. (jsdevel)
 
- * Added support for WSSecurity XML signing with x509 certificates. updated readme updated package.json with latest ursa version change minimum node requirement to 0.10 since many dependencies break with engine-strict=true under node 0.8 (Jon Ciccone)
+- Adding node v4.0 to .travis.yml. (jsdevel)
 
- * Remove assertions around location of BEGIN CERTIFICATE and END CERTIFICATE (Joseph Junker)
+- Increasing mocha test timeout to 10 seconds. (jsdevel)
 
- * Release v0.13.0 (Heinz Romirer)
+- Resolve element references when other types are referenced (Raymond Feng)
 
- * consider previous ignoredNamespaces option when processing includes (BJR Matos)
+- Update Readme.md (Vinay Pulim)
 
- * SOAP Headers for server response + a change method for both client & server (Michel D'HOOGE)
+- Update Readme (laure)
 
- * XML Declaration (Michel D'HOOGE)
+- add optional statusCode on soap fault (Gangstead)
 
- * Fixing wrong nsContext. (Mik13)
+- Fix for wsdl retrieval using soap.createClient with special options.httpClient. Before this, the specified client was not used when fetching the wsdl file. This fix will force the wsdl to use the specified httpClient. (Kevin Forest)
 
- * Adds server options hash example to Readme.md (Benjamin Albert)
+- Release v0.9.3 (jsdevel)
 
- * Children may be empty resulting in a NPE (Tobias Neubert)
+- Allowing namespace overriding for elements. (jsdevel)
 
- * Releave v0.12.0 (jsdevel)
+- Turning off email notifications for travis. (jsdevel)
 
- * updating lodash to 3.x.x (jsdevel)
+- Release v0.9.2 (jsdevel)
 
- * Fix schema overwrite when include a xsd with <xsd:include> (Leo Liang)
+- Add support for xsd element ref (Raymond Feng)
 
- * Release v0.11.4 (jsdevel)
+- Moving travis build to containers. (jsdevel)
 
- * Adding coverage to .travis (jsdevel)
+- Add request sample for an operation without any parameters. (Tom De Caluwé)
 
- * Release v0.11.3 (jsdevel)
+- update spelling and formatting to clarify several sections of Readme (Dave Kerr)
 
- * Release v0.11.2 (jsdevel)
+- Add the correct namespace alias for operations without parameters by simply removing the special case where input.parts is empty. If special logic is wanted for this case, it should be contained in objectToRpcXML in any case. (Tom De Caluwé)
 
- * Closes #733 and Fixes #707: Return null instead of empty object. (jsdevel)
+- Prevent sending Object prototype methods as XML (Claudia Hardman)
 
- * Overriding the namespace prefix with empty prefix (SunJang)
+- Allow WSDL to be loaded from HTTPS sites (Jimmy Jones)
 
- * Adds commas and semicolons to listen(...) example (Benjamin Albert)
+- Fix a typo in WSDL#findChildParameterObject (Arthur Schreiber)
 
- * Temporarily skiping test from #768. (jsdevel)
+- Fixed SOAP Fault errors not being raised as errors (Ivan Erceg)
 
- * Release v0.11.1 (jsdevel)
+- Use diffrent namespace styles for soap fault 1.1 and 1.2 (Johan Brodin)
 
- * When a complexType and an element has the same name, and we set the element to a value, the element gets the wrong namespace (a new one, e.g. ns1), because  the `findChildSchemaObject`-function returns the complexType, not the element. (Mik13)
+- Release 0.9.1 (herom)
 
- * improved 'https' pattern matching for local files with name starting with 'http' (Elijah Saounkine)
+- fix for empty strings that were returnd as empty json objects (Sasha Vincic)
 
- * Handles SOAP result null output (Simon Elbaz)
+- Get current namespace when parent namespace is empty string fixes vpulim/node-soap/issues/533 (Islam Sharabash)
 
- * Remove SOAPAction http header in SOAP 1.2, extra header was causing some servers to trip (Michael Szlapa)
+- Update readme (Raymond Feng)
 
- * When an error occur, send HTTP 500 status code (Iván López)
+- Issue 537: Take namespaces that are configured to be ignored into account (Tobias Neubert)
 
- * Adding ClientSSLSecurityPFX for use in requests (Tom Gallacher)
+- Update license attribute (Peter deHaan)
 
- * Fixed issue when an error was undefined: undefined (Tom Gallacher)
+- Add ability to customize http client/request lib (Raymond Feng)
 
- * Add missing type attribute for PasswordText in WSSecurity and update related tests (wmcmurray)
+- support xsi:type schema on element (bug #606) (pentode)
 
- * Release v0.11.0 (jsdevel)
+- recursive element should work in wsdl (Semenov, Dmytro())
 
- * pass req to service (Evan Tahler)
+- Reformat & Update History.md for v0.9.0 release. (herom)
 
- * removed console logs (Mike Borozdin)
+- Release v0.9.0 (herom)
 
- * added the ability to add HTTP headers to the client. (Mike Borozdin)
+- Make sure wsdl:import is not overwritten by xsd:import (Raymond Feng)
 
- * Release v0.10.3 (jsdevel)
+- Ignore the `.idea` folder when pushing to npm (Arthur Schreiber)
 
- * Adding createErroringStub to soap-stub. (jsdevel)
+- Add last endpoint (Ryan Fink)
 
- * Release v0.10.2 (jsdevel)
+- Support for async server errors by extending the callback with one argumnet (Johan Brodin)
 
- * Adding security to soap-stub. (jsdevel)
+- Handle HTML answer from non-SOAP server (Michel D'HOOGE)
 
- * Release v0.10.1 (jsdevel)
+- Hopefully last review comment fix attempt. (+8 squashed commits) Squashed commits: [e991d38] Still trying to fix review comments. [9627c08] Attempt at fixing review comments... [458ae0e] More review comment fixes. [2152212] Fixing a bunch of things from review comments. [6fb9b10] Fixed a large number of broken tests which were missing schema files. These had previously gone unnoticed because schema imports were not actually firing off. [bfbf338] If response is json, then error should not be thrown. Fix issue #580 [5ddb53f] Removed unnecessary code from testing. [be39fec] Fix to allow request options and headers to persist for all includes. Fix to properly handle when an import/include starts with a schema element. (Barry Dutton)
 
- * Adding soap-stub. (jsdevel)
+- Do not end request for keep-alive connections (mgorczyca)
 
- * add SOAP v1.2 support for client (Aleksey)
+- Client 'response' event (briandunnington)
 
- * Release v0.10.0 (jsdevel)
+- If response is json, then error should not be thrown. Fix issue #580 (Himanshu Kansal)
 
- * Fix xml namespace/element/type handling (Raymond Feng)
+- sub namespace should be correct regardless of order of enumeration i.e. should not be overriden by other prop's namespace (Yang)
 
- * Release v0.9.5 (jsdevel)
+- Read Me: Added a section about Server Events (Michel D'HOOGE)
 
- * Fixes 743, Allow circular XSD files to be loaded (Fabian Cook)
+- Server 'request' event (Michel D'HOOGE)
 
- * Timestamp is now optional (Jason D. Harper)
+- Add support for One-Way Operations (Wim verreydt)
 
- * Formatting History.md 0.9.4 notes. (jsdevel)
+- The extend function was throwing an error (#585). This null and typeof check will handle elements that are not objects. (z151514)
 
- * Release v0.9.4 (jsdevel)
+- ClientSSLSecurity now accepts a `ca`-certificate. (Mik13)
 
- * Adding gitter badge in preparation of disabling issues. (jsdevel)
+- ClientSSLSecurity should be able to take a Buffer as `key` and `cert` parameter. Additionally the certificates are checked whether they are correct or not (starting with `-----BEGIN`). (Mik13)
 
- * Adding node v4.0 to .travis.yml. (jsdevel)
+- Add support for sending NULL values (Chase Sillevis)
 
- * Increasing mocha test timeout to 10 seconds. (jsdevel)
+- Follow 302 redirects, don't mix quotes (Chase Sillevis)
 
- * Resolve element references when other types are referenced (Raymond Feng)
+- Update CONTRIBUTING.md (Heinz Romirer)
 
- * Update Readme.md (Vinay Pulim)
+- Respond with security timestamp if request had one (Roie Kossover)
 
- * Update Readme (laure)
+- Release v0.8.0 (herom)
 
- * add optional statusCode on soap fault (Gangstead)
+- Fix strict mode errors for v0.12 compatibility (Andrew Branch)
 
- * Fix for wsdl retrieval using soap.createClient with special options.httpClient. Before this, the specified client was not used when fetching the wsdl file. This fix will force the wsdl to use the specified httpClient. (Kevin Forest)
+- Issue #386 This fix adds support for attributes in node body (Robert)
 
- * Release v0.9.3 (jsdevel)
+- Update History.md (Heinz Romirer)
 
- * Allowing namespace overriding for elements. (jsdevel)
+- Release v0.7.0 (herom)
 
- * Turning off email notifications for travis. (jsdevel)
+- Server event to globally handle SOAP Headers (Michel D'HOOGE)
 
- * Release v0.9.2 (jsdevel)
+- Server replies with SOAP Fault thrown from method (Michel D'HOOGE)
 
- * Add support for xsd element ref (Raymond Feng)
+- fix for issue #68. Fix the case where requests are in soap format and… … (Himanshu Kansal)
 
- * Moving travis build to containers. (jsdevel)
+- Added `['positiveInteger', 'nonPositiveInteger', 'negativeInteger', 'nonNegativeInteger']` to primitive types. (Anil Anar)
 
- * Add request sample for an operation without any parameters. (Tom De Caluwé)
+- Client instances emit 'soapError' event when error is detected (Michel D'HOOGE)
 
- * update spelling and formatting to clarify several sections of Readme (Dave Kerr)
+- Respect empty soap actions in operations (Akash Agrawal)
 
- * Add the correct namespace alias for operations without parameters by simply removing the special case where input.parts is empty. If special logic is wanted for this case, it should be contained in objectToRpcXML in any case. (Tom De Caluwé)
+- Add support for message and request events as per issue #545 (Evan Shortiss)
 
- * Prevent sending Object prototype methods as XML (Claudia Hardman)
+- Issue #489: Soap header from incoming request (Michel D'HOOGE)
 
- * Allow WSDL to be loaded from HTTPS sites (Jimmy Jones)
+- Added support for CDATA with text and CDATA with XML response (whoover)
 
- * Fix a typo in WSDL#findChildParameterObject (Arthur Schreiber)
+- Return the soapHeader (nguyenchr)
 
- * Fixed SOAP Fault errors not being raised as errors (Ivan Erceg)
+- Allow logging of received XML prior to parsing and processing (Deividy Metheler)
 
- * Use diffrent namespace styles for soap fault 1.1 and 1.2 (Johan Brodin)
+- add support for importing external wsdl (yuerwei)
 
- * Release 0.9.1 (herom)
+- Use correct namespaces for elements which consist of an array. (Mik13)
 
- * fix for empty strings that were returnd as empty json objects (Sasha Vincic)
+- Use correct namespaces in for elements with base. (Mik13)
 
- * Get current namespace when parent namespace is empty string fixes vpulim/node-soap/issues/533 (Islam Sharabash)
+- preventing error when typeElement is undefined (Antonio Terreno)
 
- * Update readme (Raymond Feng)
+- Fix typo in header, breaking heading. (Albert Engelbrecht)
 
- * Issue 537: Take namespaces that are configured to be ignored into account (Tobias Neubert)
+- Allow wsdl:documentation element under wsdl:message (Raymond Feng)
 
- * Update license attribute (Peter deHaan)
+- Added functionality to ignore default tns and disabled default tns specification in first element of the body (Ferry Kobus)
 
- * Add ability to customize http client/request lib (Raymond Feng)
+- Use correct namespaces in sequences with imported elements. (Mik13)
 
- * support xsi:type schema on element (bug #606) (pentode)
+- only supply nonce when a password digest is used to avoid schema validation errors (lsalzman)
 
- * recursive element should work in wsdl (Semenov, Dmytro())
+- Updated 'extend' function. Refactored the function to copy properties from one object to another one and avoid properties overriding. This way we ensure the 'inheritance' of <xsd:extension base=...> usage. (dun4n)
 
- * Reformat & Update History.md for v0.9.0 release. (herom)
+- Define $xml to pass xml object (Damien Picard)
 
- * Release v0.9.0 (herom)
+- Adding PUBLISHING.md (jsdevel)
 
- * Make sure wsdl:import is not overwritten by xsd:import (Raymond Feng)
+- Removes automatic port appending to "Host" header. (herom)
 
- * Ignore the `.idea` folder when pushing to npm (Arthur Schreiber)
+- Avoid creating soap:Header container when there are no children This time including the matching fixture changes to remove <soap:Header></soap:Header> Added support for header and security fixtures in request/response tests, and added tests for header optionality (Shelby Sanders)
 
- * Add last endpoint (Ryan Fink)
+- Updated CONTRIBUTING.md (herom)
 
- * Support for async server errors by extending the callback with one argumnet (Johan Brodin)
+- Addresses #75 - Allowing a 'null' argument for WSDL methods that take no arguments (Chris Klosowski)
 
- * Handle HTML answer from non-SOAP server (Michel D'HOOGE)
+- Fix for wrong initialization of xmlns array when handling rpc stype wsdl (ankush-garg)
 
- * Hopefully last review comment fix attempt. (+8 squashed commits) Squashed commits: [e991d38] Still trying to fix review comments. [9627c08] Attempt at fixing review comments... [458ae0e] More review comment fixes. [2152212] Fixing a bunch of things from review comments. [6fb9b10] Fixed a large number of broken tests which were missing schema files. These had previously gone unnoticed because schema imports were not actually firing off. [bfbf338] If response is json, then error should not be thrown. Fix issue #580 [5ddb53f] Removed unnecessary code from testing. [be39fec] Fix to allow request options and headers to persist for all includes. Fix to properly handle when an import/include starts with a schema element. (Barry Dutton)
+- Fixing fault handling (Diego Silveira)
 
- * Do not end request for keep-alive connections (mgorczyca)
+- Added checking if there is input and output for operations under bindings section (Krzysztof Gutkowski)
 
- * Client 'response' event (briandunnington)
+- Fixing XSD conflict with same namespace (Diego Silveira)
 
- * If response is json, then error should not be thrown. Fix issue #580 (Himanshu Kansal)
+- Adding bearer security type Exporting security type for usage (Phil Hansen)
 
- * sub namespace should be correct regardless of order of enumeration i.e. should not be overriden by other prop's namespace (Yang)
+- The qualified elementFormQualified must be respected only when the current element is not a global element. The namespace attribute is only needed if it's not included in the xmlnsInEnvelope collection. (frank)
 
- * Read Me: Added a section about Server Events (Michel D'HOOGE)
+- updating History.md (jsdevel)
 
- * Server 'request' event (Michel D'HOOGE)
+- Add "defaults" parameter to BasicAuthSecurity's constructor (Luke Horvat)
 
- * Add support for One-Way Operations (Wim verreydt)
+- added tests for HTTP Host header (John Sanderson)
 
- * The extend function was throwing an error (#585). This null and typeof check will handle elements that are not objects. (z151514)
+- don't append port 80 to Host if not needed (John Sanderson)
 
- * ClientSSLSecurity now accepts a `ca`-certificate. (Mik13)
+- Add an .editorconfig file to improve the code formatting in contributors editor of choice. (herom)
 
- * ClientSSLSecurity should be able to take a Buffer as `key` and `cert` parameter. Additionally the certificates are checked whether they are correct or not (starting with `-----BEGIN`). (Mik13)
+- Remove possible existing BOM characters from XML String before passing it to `WSDL#_fromXML()` and parsing it. (herom)
 
- * Add support for sending NULL values (Chase Sillevis)
+- Added possibility to set a custom `valueKey` for the parsed values from XML SOAP Response as the current fixed "$value" key could collide with some policies (as it's the case when using MongoDB). (herom)
 
- * Follow 302 redirects, don't mix quotes (Chase Sillevis)
+- Handling nil attributes in response xml (Graham Hay)
 
- * Update CONTRIBUTING.md (Heinz Romirer)
+- Updating History (jsdevel)
 
- * Respond with security timestamp if request had one (Roie Kossover)
+- Updated client.js; Created request-response-sample. (Lev Nazarenko)
 
- * Release v0.8.0 (herom)
+- Resolve namespaces correctly by ignoring "tns:", "targetNamespace", "typedNamespace:", ... prefixes in child elements by default. (herom)
 
- * Fix strict mode errors for v0.12 compatibility (Andrew Branch)
+- adding default attributesKey to server and allowing the property to be configurable fixing issue #406 (Helder Rossa)
 
- * Issue #386 This fix adds support for attributes in node body (Robert)
+- Remove extra characters before and after soap envelope (jkirkwood)
 
- * Update History.md (Heinz Romirer)
+- Fix: Allow operations to not have definitions (Chris Barton)
 
- * Release v0.7.0 (herom)
+- Update Readme.md (Tom Caflisch)
 
- * Server event to globally handle SOAP Headers (Michel D'HOOGE)
+- Ignore unknown elements (Graham Hay)
 
- * Server replies with SOAP Fault thrown from method (Michel D'HOOGE)
+- Keep ns from top-level (Graham Hay)
 
- * fix for issue #68. Fix the case where requests are in soap format and… … (Himanshu Kansal)
+- Check status code of invocation response (Graham Hay)
 
- * Added `['positiveInteger', 'nonPositiveInteger', 'negativeInteger', 'nonNegativeInteger']` to primitive types. (Anil Anar)
+- wsdl should handle more types (Dmytro Semenov)
 
- * Client instances emit 'soapError' event when error is detected (Michel D'HOOGE)
+- Using jshint 2.3.0 for indentation. (jsdevel)
 
- * Respect empty soap actions in operations (Akash Agrawal)
+- 0.4.7 release (jsdevel)
 
- * Add support for message and request events as per issue #545 (Evan Shortiss)
+- 0.4.6 release (jsdevel)
 
- * Issue #489: Soap header from incoming request (Michel D'HOOGE)
+- Added possiblity for request elements containing both content and attributes. (Jasper Woudenberg)
 
- * Added support for CDATA with text and CDATA with XML response (whoover)
+- Fixup the `elementFormDefault` functionality. (Arthur Schreiber)
 
- * Return the soapHeader (nguyenchr)
+- Fix determining the namespace for complex elements. (Arthur Schreiber)
 
- * Allow logging of received XML prior to parsing and processing (Deividy Metheler)
+- Add support for the `elementFormDefault` schema attribute. (Arthur Schreiber)
 
- * add support for importing external wsdl (yuerwei)
+- Fixing duplicate code which had gotten introduced because of a merge. (ankush-garg)
 
- * Use correct namespaces for elements which consist of an array. (Mik13)
+- Handle SOAP Response element value and attributes so that the attribu… …tes of an element don't get overwritten if also a value is given. (Heinz Romirer)
 
- * Use correct namespaces in for elements with base. (Mik13)
+- Allowing the property name "attributes" to be configurable. (Michael Hernandez)
 
- * preventing error when typeElement is undefined (Antonio Terreno)
+- Moving xsi type namespace processing to processAttributes method to handle xsiTypes for object of arrays. (ankush-garg)
 
- * Fix typo in header, breaking heading. (Albert Engelbrecht)
+- Added the possibility to work with `wsdl` files which pull their `schema`s in through `import`s and declare their message `part` to have an `element` attribute instead of `type`. (herom)
 
- * Allow wsdl:documentation element under wsdl:message (Raymond Feng)
+- Allowing response.xml to be optional in tests. (jsdevel)
 
- * Added functionality to ignore default tns and disabled default tns specification in first element of the body (Ferry Kobus)
+- Allowing request.xml and response.json to be optional for tests. (jsdevel)
 
- * Use correct namespaces in sequences with imported elements. (Mik13)
+- Fix for adding an undefined XML namespace to the generated XML's child namespace (Abhijit Gaikwad)
 
- * only supply nonce when a password digest is used to avoid schema validation errors (lsalzman)
+- Added some documentation on options object when calling createClient. (Golo Roden)
 
- * Updated 'extend' function. Refactored the function to copy properties from one object to another one and avoid properties overriding. This way we ensure the 'inheritance' of <xsd:extension base=...> usage. (dun4n)
+- Patch for issue #150 (Ashvin)
 
- * Define $xml to pass xml object (Damien Picard)
+- Moving up guidelines for submitting Pull Requests. (Joseph Spencer)
 
- * Adding PUBLISHING.md (jsdevel)
+# 2014-05-13, Version 0.4.5
 
- * Removes automatic port appending to "Host" header. (herom)
+- 0.4.5 release (jsdevel)
 
- * Avoid creating soap:Header container when there are no children This time including the matching fixture changes to remove <soap:Header></soap:Header> Added support for header and security fixtures in request/response tests, and added tests for header optionality (Shelby Sanders)
+- Consolidate commit, intended to supersede #208 PR. (H. Arnold Jones)
 
- * Updated CONTRIBUTING.md (herom)
+- An exception raised while parsing XML now hands off to callback of createConnection() instead of throwing it into the ether (+tests) (Christopher Hiller)
 
- * Addresses #75 - Allowing a 'null' argument for WSDL methods that take no arguments (Chris Klosowski)
+- Fixed `AssertionError: Invalid child type` when WSDL contains imports, fix #322 (Joe Wong)
 
- * Fix for wrong initialization of xmlns array when handling rpc stype wsdl (ankush-garg)
+- Fix for `TargetNamespace not loaded when import in schema #325` with Test-WSDL(Dummy.wsdl) and Test-Schemas(Common.xsd, Name.xsd) and writes message to the console when an `targetNamespace` already exists for an specific Schema and skips the extra Schema (phGitUser)
 
- * Fixing fault handling (Diego Silveira)
+- Update Readme.md (Joseph Spencer)
 
- * Added checking if there is input and output for operations under bindings section (Krzysztof Gutkowski)
+# 2014-04-16, Version 0.4.4
 
- * Fixing XSD conflict with same namespace (Diego Silveira)
+- 0.4.4 release (jsdevel)
 
- * Adding bearer security type Exporting security type for usage (Phil Hansen)
+- Updating security protocols, adding lodash. (jxspencer)
 
- * The qualified elementFormQualified must be respected only when the current element is not a global element. The namespace attribute is only needed if it's not included in the xmlnsInEnvelope collection. (frank)
+- Fix and test for #257 (Peter Magnusson)
 
- * updating History.md (jsdevel)
+- Fix to reset the generated namespace number. (ankush-garg)
 
- * Add "defaults" parameter to BasicAuthSecurity's constructor (Luke Horvat)
+- Fixed issue when custom headers values are not sent correctly (Abhijit Gaikwad)
 
- * added tests for HTTP Host header (John Sanderson)
+# 2014-04-07, Version 0.4.3
 
- * don't append port 80 to Host if not needed (John Sanderson)
+- 0.4.3 release (jsdevel)
 
- * Add an .editorconfig file to improve the code formatting in contributors editor of choice. (herom)
+- Refactored WS-security. small modifications to pull #275 (Abhijit Gaikwad)
 
- * Remove possible existing BOM characters from XML String before passing it to `WSDL#_fromXML()` and parsing it. (herom)
+- Updated readme to add documentation for passing options to a client request (Grant Shively)
 
- * Added possibility to set a custom `valueKey` for the parsed values from XML SOAP Response as the current fixed "$value" key could collide with some policies (as it's the case when using MongoDB). (herom)
+- Added null check for portType and methods[methodname].output (Abhijit Gaikwad)
 
- * Handling nil attributes in response xml (Graham Hay)
+- Issue: Requests that included compex types led to invalid request XML. (Tomas Bartkus)
 
- * Updating History (jsdevel)
+- 1.  Ability to add extra headers to the client request + two tests 2) Test to ensure that client has lastResponse and lastResponseHeaders after it returns (ankush-garg)
 
- * Updated client.js; Created request-response-sample. (Lev Nazarenko)
+- Support for attributes array elements and support for complex extensions with array elements. (ankush-garg)
 
- * Resolve namespaces correctly by ignoring "tns:", "targetNamespace", "typedNamespace:", ... prefixes in child elements by default. (herom)
+- Make sure callback is done asynchronously for a cached wsdl (Raymond Feng)
 
- * adding default attributesKey to server and allowing the property to be configurable fixing issue #406 (Helder Rossa)
+- Fix for #133 - inheritance support. (ankush-garg)
 
- * Remove extra characters before and after soap envelope (jkirkwood)
+# 2014-03-13, Version 0.4.2
 
- * Fix: Allow operations to not have definitions (Chris Barton)
+- 0.4.2 release (jxspencer)
 
- * Update Readme.md (Tom Caflisch)
+- Adding ability to inspect and clear soap headers. (ankush-garg)
 
- * Ignore unknown elements (Graham Hay)
+- Reducing test wsdl size (ankush-garg)
 
- * Keep ns from top-level (Graham Hay)
+- don't prefix default namespace elements with 'xmlns:' (Oran Dennison)
 
- * Check status code of invocation response (Graham Hay)
+# 2014-03-04, Version 0.4.1
 
- * wsdl should handle more types (Dmytro Semenov)
+- 0.4.1 release (jsdevel)
 
- * Using jshint 2.3.0 for indentation. (jsdevel)
+- Add support for default namespace elements. Incorporated the changes from PR #173 and added a test WSDL. (Oran Dennison)
 
- * 0.4.7 release (jsdevel)
+- Attach root object to error on soap fault (ankush-garg)
 
- * 0.4.6 release (jsdevel)
+- Adding an npmignore on test/. (Joseph Spencer)
 
- * Added possiblity for request elements containing both content and attributes. (Jasper Woudenberg)
+- Update CONTRIBUTING.md (Joseph Spencer)
 
- * Fixup the `elementFormDefault` functionality. (Arthur Schreiber)
+- jshint is run on tests now, moved some tests over to mocha BDD format (Matt Broadstone)
 
- * Fix determining the namespace for complex elements. (Arthur Schreiber)
+- Handle attributes in requests (ankush-garg)
 
- * Add support for the `elementFormDefault` schema attribute. (Arthur Schreiber)
+- add simple ssl-test.js, and example certs (Matt Broadstone)
 
- * Fixing duplicate code which had gotten introduced because of a merge. (ankush-garg)
+- move wsdl parsing tests to their own file (Matt Broadstone)
 
- * Handle SOAP Response element value and attributes so that the attribu… …tes of an element don't get overwritten if also a value is given. (Heinz Romirer)
+- Fix for issue # 204. (ankush-garg)
 
- * Allowing the property name "attributes" to be configurable. (Michael Hernandez)
+- makes node-soap ua matches package.json version (Nathan White)
 
- * Moving xsi type namespace processing to processAttributes method to handle xsiTypes for object of arrays. (ankush-garg)
+- Change OperationElement.prototype.describe to check for existence of input/output before adding them to the description. Unit test and sample WSDL file included. (Matt Broadstone)
 
- * Added the possibility to work with `wsdl` files which pull their `schema`s in through `import`s and declare their message `part` to have an `element` attribute instead of `type`. (herom)
+- Cleaning up vac and ip2tele directories under test/ (jsdevel)
 
- * Allowing response.xml to be optional in tests. (jsdevel)
+- minor grammar / markdown tweaks. (Joseph Spencer)
 
- * Allowing request.xml and response.json to be optional for tests. (jsdevel)
+- Moving attribute-parsing tests to request-response-samples and adding a README therein. (jsdevel)
 
- * Fix for adding an undefined XML namespace to the generated XML's child namespace (Abhijit Gaikwad)
+- Minor grammar fixes to CONTRIBUTING.md (Joseph Spencer)
 
- * Added some documentation on options object when calling createClient. (Golo Roden)
+- Adding a CONTRIBUTING.md file (jsdevel)
 
- * Patch for issue #150 (Ashvin)
+- travis project changed from milewise/node-soap to vpulim/node-soap (Vinay Pulim)
 
- * Moving up guidelines for submitting Pull Requests. (Joseph Spencer)
+# 2014-02-15, Version 0.4.0
 
+- release 0.4.0 (Vinay Pulim)
 
-2014-05-13, Version 0.4.5
-=========================
+- 1.  Added stripped down test NetSuite wsdl which was failing on describe 2) Updated test to describe Wsdls (ankush-garg)
 
- * 0.4.5 release (jsdevel)
+- Fix for "Uncaught TypeError: Cannot read property '0' of undefined". (ankush)
 
- * Consolidate commit, intended to supersede #208 PR. (H. Arnold Jones)
+- remove expat as a dependency and add sax (Christiaan Westerbeek)
 
- * An exception raised while parsing XML now hands off to callback of createConnection() instead of throwing it into the ether (+tests) (Christopher Hiller)
+- Fixing undefined value for json in client response (jsdevel)
 
- * Fixed `AssertionError: Invalid child type` when WSDL contains imports, fix #322 (Joe Wong)
+- Add non xmlns attributes to elements during response parsing (jsdevel)
 
- * Fix for `TargetNamespace not loaded when import in schema #325` with Test-WSDL(Dummy.wsdl) and Test-Schemas(Common.xsd, Name.xsd) and writes message to the console when an `targetNamespace` already exists for an specific Schema and skips the extra Schema (phGitUser)
+- travis badge (Aaron Heckmann)
 
- * Update Readme.md (Joseph Spencer)
+- tests; fixed linux which passes ECONNREFUSED (Aaron Heckmann)
 
+- Start a new server instance for each test in server-test (Juho Vähä-Herttua)
 
-2014-04-16, Version 0.4.4
-=========================
+- Fix a potential crash in the client handler (Juho Vähä-Herttua)
 
- * 0.4.4 release (jsdevel)
+- Add a failing tests to reproduce an uncaught error (Juho Vähä-Herttua)
 
- * Updating security protocols, adding lodash. (jxspencer)
+- Fix requests if SOAP service is not on port 80 (Juho Vähä-Herttua)
 
- * Fix and test for #257 (Peter Magnusson)
+- removing execute permissions on .gitignore (jsdevel)
 
- * Fix to reset the generated namespace number. (ankush-garg)
+- add-jshint for wsdl.js (jsdevel)
 
- * Fixed issue when custom headers values are not sent correctly (Abhijit Gaikwad)
+- add-jshint for lib/soap.js (jsdevel)
 
+- add-jshint for lib/server.js (jsdevel)
 
-2014-04-07, Version 0.4.3
-=========================
+- add-jshint for lib/client.js (jsdevel)
 
- * 0.4.3 release (jsdevel)
+- add-jshint for lib/https.js (jsdevel)
 
- * Refactored WS-security. small modifications to  pull #275 (Abhijit Gaikwad)
+- Adding jshint for index.js (jsdevel)
 
- * Updated readme to add documentation for passing options to a client request (Grant Shively)
+- add travis (Aaron Heckmann)
 
- * Added null check for portType and methods[methodname].output (Abhijit Gaikwad)
+- Remove execute privileges on files. (jsdevel)
 
- * Issue: Requests that included compex types led to invalid request XML. (Tomas Bartkus)
+# 2014-01-21, Version 0.3.2
 
- * 1) Ability to add extra headers to the client request + two tests 2) Test to ensure that client has lastResponse and lastResponseHeaders after it returns (ankush-garg)
-
- * Support for attributes array elements and support for complex extensions with array elements. (ankush-garg)
-
- * Make sure callback is done asynchronously for a cached wsdl (Raymond Feng)
-
- * Fix for #133 - inheritance support. (ankush-garg)
-
-
-2014-03-13, Version 0.4.2
-=========================
-
- * 0.4.2 release (jxspencer)
-
- * Adding ability to inspect and clear soap headers. (ankush-garg)
-
- * Reducing test wsdl size (ankush-garg)
-
- * don't prefix default namespace elements with 'xmlns:' (Oran Dennison)
-
-
-2014-03-04, Version 0.4.1
-=========================
-
- * 0.4.1 release (jsdevel)
-
- * Add support for default namespace elements. Incorporated the changes from PR #173 and added a test WSDL. (Oran Dennison)
-
- * Attach root object to error on soap fault (ankush-garg)
-
- * Adding an npmignore on test/. (Joseph Spencer)
-
- * Update CONTRIBUTING.md (Joseph Spencer)
-
- * jshint is run on tests now, moved some tests over to mocha BDD format (Matt Broadstone)
-
- * Handle attributes in requests (ankush-garg)
-
- * add simple ssl-test.js, and example certs (Matt Broadstone)
-
- * move wsdl parsing tests to their own file (Matt Broadstone)
-
- * Fix for issue # 204. (ankush-garg)
-
- * makes node-soap ua matches package.json version (Nathan White)
-
- * Change OperationElement.prototype.describe to check for existence of input/output before adding them to the description. Unit test and sample WSDL file included. (Matt Broadstone)
-
- * Cleaning up vac and ip2tele directories under test/ (jsdevel)
-
- * minor grammar / markdown tweaks. (Joseph Spencer)
-
- * Moving attribute-parsing tests to request-response-samples and adding a README therein. (jsdevel)
-
- * Minor grammar fixes to CONTRIBUTING.md (Joseph Spencer)
-
- * Adding a CONTRIBUTING.md file (jsdevel)
-
- * travis project changed from milewise/node-soap to vpulim/node-soap (Vinay Pulim)
-
-
-2014-02-15, Version 0.4.0
-=========================
-
- * release 0.4.0 (Vinay Pulim)
-
- * 1) Added stripped down test NetSuite wsdl which was failing on describe 2) Updated test to describe Wsdls (ankush-garg)
-
- * Fix for "Uncaught TypeError: Cannot read property '0' of undefined". (ankush)
-
- * remove expat as a dependency and add sax (Christiaan Westerbeek)
-
- * Fixing undefined value for json in client response (jsdevel)
-
- * Add non xmlns attributes to elements during response parsing (jsdevel)
-
- * travis badge (Aaron Heckmann)
-
- * tests; fixed linux which passes ECONNREFUSED (Aaron Heckmann)
-
- * Start a new server instance for each test in server-test (Juho Vähä-Herttua)
-
- * Fix a potential crash in the client handler (Juho Vähä-Herttua)
-
- * Add a failing tests to reproduce an uncaught error (Juho Vähä-Herttua)
-
- * Fix requests if SOAP service is not on port 80 (Juho Vähä-Herttua)
-
- * removing execute permissions on .gitignore (jsdevel)
-
- * add-jshint for wsdl.js (jsdevel)
-
- * add-jshint for lib/soap.js (jsdevel)
-
- * add-jshint for lib/server.js (jsdevel)
-
- * add-jshint for lib/client.js (jsdevel)
-
- * add-jshint for lib/https.js (jsdevel)
-
- * Adding jshint for index.js (jsdevel)
-
- * add travis (Aaron Heckmann)
-
- * Remove execute privileges on files. (jsdevel)
-
-
-2014-01-21, Version 0.3.2
-=========================
-
- * First release!
+- First release!

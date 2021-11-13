@@ -1,76 +1,74 @@
 {
   "UpdateProfileRequest": {
-  "Profile": {
-    "IDs": {
-      "UniqueID": [
-        {
-          "$attributes": {
-            "source": "TESTSOURCE"
+    "Profile": {
+      "IDs": {
+        "UniqueID": [
+          {
+            "$attributes": {
+              "source": "TESTSOURCE"
+            },
+            "$value": 100
           },
-          "$value": 100
-        },
-        {
-          "$attributes": {
-            "source": "TESTSOURCE2"
+          {
+            "$attributes": {
+              "source": "TESTSOURCE2"
+            },
+            "$value": 100
           },
-          "$value": 100
-        },
-        {
-          "$attributes": {
-            "source": "TESTSOURCE3"
-          },
-          "$value": 100
-        }
-      ]
-    },
-    "Addresses": {
-      "NameAddress": [
-        {
-          "AddressLine": "Another Address"
-        },
-        {
-          "AddressLine": "My Address"
-        }
-      ]
-    },
-    "Phones": {
-      "NamePhone": [
-        {
-          "$attributes": {
-            "primary": true
-          },
-          "PhoneData": {
-            "PhoneNumber": "400123"
-          },
-          "details": {
-            "data": [
-              {
-                "$attributes": {
-                  "type": "Extension"
-                },
-                "$value": 1001
-              },
-              {
-                "$attributes": {
-                  "type": "AreaCode"
-                },
-                "$value": 377
-              }
-            ]
+          {
+            "$attributes": {
+              "source": "TESTSOURCE3"
+            },
+            "$value": 100
           }
-        },
-        {
-          "$attributes": {
-            "primary": false
+        ]
+      },
+      "Addresses": {
+        "NameAddress": [
+          {
+            "AddressLine": "Another Address"
           },
-          "PhoneData": {
-            "PhoneNumber": "555010456"
+          {
+            "AddressLine": "My Address"
           }
-        }
-      ]
+        ]
+      },
+      "Phones": {
+        "NamePhone": [
+          {
+            "$attributes": {
+              "primary": true
+            },
+            "PhoneData": {
+              "PhoneNumber": "400123"
+            },
+            "details": {
+              "data": [
+                {
+                  "$attributes": {
+                    "type": "Extension"
+                  },
+                  "$value": 1001
+                },
+                {
+                  "$attributes": {
+                    "type": "AreaCode"
+                  },
+                  "$value": 377
+                }
+              ]
+            }
+          },
+          {
+            "$attributes": {
+              "primary": false
+            },
+            "PhoneData": {
+              "PhoneNumber": "555010456"
+            }
+          }
+        ]
+      }
     }
   }
-  }
 }
-
-

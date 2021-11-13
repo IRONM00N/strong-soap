@@ -3,7 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-var soap = require('..').soap;
+var soap = require("..").soap;
 var XMLHandler = soap.XMLHandler;
 
 var xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -34,7 +34,7 @@ var xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 </soap:Envelope>`;
 
 var root = XMLHandler.parseXml(null, xmlString);
-var result = root.end({pretty: true});
+var result = root.end({ pretty: true });
 console.log(result);
 
 /*
@@ -49,5 +49,3 @@ xmlHandler.parseXml(null, xmlStream, function(err, root) {
 xmlStream.push(xmlString);    // the string you want
 xmlStream.push(null);
 */
-
-

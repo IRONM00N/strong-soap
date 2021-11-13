@@ -5,68 +5,80 @@
 
 "use strict";
 
-var fs = require('fs'),
-    soap = require('..').soap,
-    assert = require('assert'),
-    http = require('http');
+var fs = require("fs"),
+  soap = require("..").soap,
+  assert = require("assert"),
+  http = require("http");
 
-describe('RPC style tests', function() {
-
-  describe('RPC Literal', function() {
+describe("RPC style tests", function () {
+  describe("RPC Literal", function () {
     var test = {};
     test.server = null;
     test.service = {
       StockQuoteServiceRPC: {
         StockQuotePortRPC: {
-          setLastTradePrice: function(args, cb, soapHeader) {
+          setLastTradePrice: function (args, cb, soapHeader) {
             if (args.tradePrice) {
-              var jsonResponse = {"result": true};
+              var jsonResponse = { result: true };
               return jsonResponse;
             }
-          }
-        }
-      }
+          },
+        },
+      },
     };
 
-    before(function(done) {
-      fs.readFile(__dirname + '/wsdl/strict/stockquoterpc.wsdl', 'utf8', function(err, data) {
-        assert.ok(!err);
-        test.wsdl = data;
+    before(function (done) {
+      fs.readFile(
+        __dirname + "/wsdl/strict/stockquoterpc.wsdl",
+        "utf8",
+        function (err, data) {
+          assert.ok(!err);
+          test.wsdl = data;
+          done();
+        }
+      );
+    });
+
+    beforeEach(function (done) {
+      test.server = http.createServer(function (req, res) {
+        res.statusCode = 404;
+        res.end();
+      });
+
+      test.server.listen(15099, null, null, function () {
+        test.soapServer = soap.listen(
+          test.server,
+          "/stockquoterpc",
+          test.service,
+          test.wsdl
+        );
+        test.baseUrl =
+          "http://" +
+          test.server.address().address +
+          ":" +
+          test.server.address().port;
+
+        //windows return 0.0.0.0 as address and that is not
+        //valid to use in a request
+        if (
+          test.server.address().address === "0.0.0.0" ||
+          test.server.address().address === "::"
+        ) {
+          test.baseUrl = "http://127.0.0.1:" + test.server.address().port;
+        }
+
         done();
       });
     });
 
-    beforeEach(function(done) {
-      test.server = http.createServer(function(req, res) {
-        res.statusCode = 404;
-       res.end();
+    afterEach(function (done) {
+      test.server.close(function () {
+        test.server = null;
+        delete test.soapServer;
+        test.soapServer = null;
+        done();
+      });
     });
-
-    test.server.listen(15099, null, null, function() {
-      test.soapServer = soap.listen(test.server, '/stockquoterpc', test.service, test.wsdl);
-      test.baseUrl =
-        'http://' + test.server.address().address + ":" + test.server.address().port;
-
-      //windows return 0.0.0.0 as address and that is not
-      //valid to use in a request
-      if (test.server.address().address === '0.0.0.0' || test.server.address().address === '::') {
-        test.baseUrl =
-          'http://127.0.0.1:' + test.server.address().port;
-      }
-
-      done();
-    });
-
-  });
-
-  afterEach(function(done) {
-    test.server.close(function() {
-      test.server = null;
-      delete test.soapServer;
-      test.soapServer = null;
-      done();
-    });
-  });
 
     //rpc/literal with complexType input parameters test
     //In case of rpc/literal client request has operation name which in this case is 'setLastTradePrice'
@@ -95,66 +107,82 @@ describe('RPC style tests', function() {
     </soap:Body>
     */
 
-  it('RPC Literal with ComplexType test', function(done) {
-    soap.createClient(test.baseUrl + '/stockquoterpc?wsdl', function(err, client) {
-      assert.ok(!err);
-      //pass in the input param which in this case is complexType param tradePrice
-      client.setLastTradePrice( {tradePrice: 100}, function(err, result, body) {
-        assert.ok(!err);
-        assert.ok(result.result);
-        done();
-      });
+    it("RPC Literal with ComplexType test", function (done) {
+      soap.createClient(
+        test.baseUrl + "/stockquoterpc?wsdl",
+        function (err, client) {
+          assert.ok(!err);
+          //pass in the input param which in this case is complexType param tradePrice
+          client.setLastTradePrice(
+            { tradePrice: 100 },
+            function (err, result, body) {
+              assert.ok(!err);
+              assert.ok(result.result);
+              done();
+            }
+          );
+        }
+      );
     });
   });
 
-});
-
-
-  describe('RPC Literal', function() {
-
+  describe("RPC Literal", function () {
     var test = {};
     test.server = null;
     test.service = {
       RPCLiteralService: {
         RpcLiteralTestPort: {
-          myMethod: function(args, cb, soapHeader) {
-          }
-        }
-      }
+          myMethod: function (args, cb, soapHeader) {},
+        },
+      },
     };
 
-    before(function(done) {
-      fs.readFile(__dirname + '/wsdl/strict/rpc_literal_test.wsdl', 'utf8', function(err, data) {
-        assert.ok(!err);
-        test.wsdl = data;
-        done();
-      });
+    before(function (done) {
+      fs.readFile(
+        __dirname + "/wsdl/strict/rpc_literal_test.wsdl",
+        "utf8",
+        function (err, data) {
+          assert.ok(!err);
+          test.wsdl = data;
+          done();
+        }
+      );
     });
 
-    beforeEach(function(done) {
-      test.server = http.createServer(function(req, res) {
+    beforeEach(function (done) {
+      test.server = http.createServer(function (req, res) {
         res.statusCode = 404;
         res.end();
       });
 
-      test.server.listen(15099, null, null, function() {
-        test.soapServer = soap.listen(test.server, '/rpc_literal_test', test.service, test.wsdl);
+      test.server.listen(15099, null, null, function () {
+        test.soapServer = soap.listen(
+          test.server,
+          "/rpc_literal_test",
+          test.service,
+          test.wsdl
+        );
         test.baseUrl =
-          'http://' + test.server.address().address + ":" + test.server.address().port;
+          "http://" +
+          test.server.address().address +
+          ":" +
+          test.server.address().port;
 
         //windows return 0.0.0.0 as address and that is not
         //valid to use in a request
-        if (test.server.address().address === '0.0.0.0' || test.server.address().address === '::') {
-          test.baseUrl =
-            'http://127.0.0.1:' + test.server.address().port;
+        if (
+          test.server.address().address === "0.0.0.0" ||
+          test.server.address().address === "::"
+        ) {
+          test.baseUrl = "http://127.0.0.1:" + test.server.address().port;
         }
 
         done();
       });
     });
 
-    afterEach(function(done) {
-      test.server.close(function() {
+    afterEach(function (done) {
+      test.server.close(function () {
         test.server = null;
         delete test.soapServer;
         test.soapServer = null;
@@ -176,65 +204,79 @@ describe('RPC style tests', function() {
     //body="" since this is a one-way request
     //result (output param inside the body) is null
     */
-    it('RPC/Literal Simple type test', function(done) {
-      soap.createClient(test.baseUrl + '/rpc_literal_test?wsdl', function(err, client) {
-        assert.ok(!err);
-        //see wsdl. input message has 2 parts = x=int and y=float which gets passed to client method as params.
-        client.myMethod( {x: 100, y: 10.55}, function(err, result, body) {
+    it("RPC/Literal Simple type test", function (done) {
+      soap.createClient(
+        test.baseUrl + "/rpc_literal_test?wsdl",
+        function (err, client) {
           assert.ok(!err);
-          assert.ok(!result);
-          done();
-        });
-      });
+          //see wsdl. input message has 2 parts = x=int and y=float which gets passed to client method as params.
+          client.myMethod({ x: 100, y: 10.55 }, function (err, result, body) {
+            assert.ok(!err);
+            assert.ok(!result);
+            done();
+          });
+        }
+      );
     });
-
   });
 
-  describe('SOAP Server', function() {
-
+  describe("SOAP Server", function () {
     var test = {};
     test.server = null;
     test.service = {
       RPCEncodedService: {
         RpcEncodedTestPort: {
-          myMethod: function(args, cb, soapHeader) {
-          }
-        }
-      }
+          myMethod: function (args, cb, soapHeader) {},
+        },
+      },
     };
 
-    before(function(done) {
-      fs.readFile(__dirname + '/wsdl/strict/rpc_encoded_test.wsdl', 'utf8', function(err, data) {
-        assert.ok(!err);
-        test.wsdl = data;
-        done();
-      });
+    before(function (done) {
+      fs.readFile(
+        __dirname + "/wsdl/strict/rpc_encoded_test.wsdl",
+        "utf8",
+        function (err, data) {
+          assert.ok(!err);
+          test.wsdl = data;
+          done();
+        }
+      );
     });
 
-    beforeEach(function(done) {
-      test.server = http.createServer(function(req, res) {
+    beforeEach(function (done) {
+      test.server = http.createServer(function (req, res) {
         res.statusCode = 404;
         res.end();
       });
 
-      test.server.listen(15099, null, null, function() {
-        test.soapServer = soap.listen(test.server, '/rpc_encoded_test', test.service, test.wsdl);
+      test.server.listen(15099, null, null, function () {
+        test.soapServer = soap.listen(
+          test.server,
+          "/rpc_encoded_test",
+          test.service,
+          test.wsdl
+        );
         test.baseUrl =
-          'http://' + test.server.address().address + ":" + test.server.address().port;
+          "http://" +
+          test.server.address().address +
+          ":" +
+          test.server.address().port;
 
         //windows return 0.0.0.0 as address and that is not
         //valid to use in a request
-        if (test.server.address().address === '0.0.0.0' || test.server.address().address === '::') {
-          test.baseUrl =
-            'http://127.0.0.1:' + test.server.address().port;
+        if (
+          test.server.address().address === "0.0.0.0" ||
+          test.server.address().address === "::"
+        ) {
+          test.baseUrl = "http://127.0.0.1:" + test.server.address().port;
         }
 
         done();
       });
     });
 
-    afterEach(function(done) {
-      test.server.close(function() {
+    afterEach(function (done) {
+      test.server.close(function () {
         test.server = null;
         delete test.soapServer;
         test.soapServer = null;
@@ -260,20 +302,19 @@ describe('RPC style tests', function() {
      //body="" since this is a one-way request
      //result (data inside the body) is null
      */
-    it.skip('RPC/Encoded style test', function(done) {
-      soap.createClient(test.baseUrl + '/rpc_encoded_test?wsdl', function(err, client) {
-        assert.ok(!err);
-        //see wsdl. input message has 2 parts = x=int and y=float. Pass them as params.
-        client.myMethod( {x: 100, y: 10.55}, function(err, result, body) {
+    it.skip("RPC/Encoded style test", function (done) {
+      soap.createClient(
+        test.baseUrl + "/rpc_encoded_test?wsdl",
+        function (err, client) {
           assert.ok(!err);
-          assert.ok(!result);
-          done();
-        });
-      });
+          //see wsdl. input message has 2 parts = x=int and y=float. Pass them as params.
+          client.myMethod({ x: 100, y: 10.55 }, function (err, result, body) {
+            assert.ok(!err);
+            assert.ok(!result);
+            done();
+          });
+        }
+      );
     });
-
   });
-
 });
-
-

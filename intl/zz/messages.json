@@ -7,27 +7,13 @@
     "console.log:example/ntlm.js:48",
     "console.log:example/weather.js:37"
   ],
-  "Response Envelope: \n": [
-    "console.log:example/stockquote.js:16"
-  ],
-  "Result: \n": [
-    "console.log:example/stockquote.js:18"
-  ],
-  "Invoking operation: ": [
-    "console.log:example/weather.js:33"
-  ],
-  "Result:": [
-    "console.log:example/weather.js:43"
-  ],
-  "jsonToXml:": [
-    "console.log:example/weather.js:55"
-  ],
-  "parseXml:": [
-    "console.log:example/weather.js:67"
-  ],
-  "%s": [
-    "console.log:example/xml2json.js:36"
-  ],
+  "Response Envelope: \n": ["console.log:example/stockquote.js:16"],
+  "Result: \n": ["console.log:example/stockquote.js:18"],
+  "Invoking operation: ": ["console.log:example/weather.js:33"],
+  "Result:": ["console.log:example/weather.js:43"],
+  "jsonToXml:": ["console.log:example/weather.js:55"],
+  "parseXml:": ["console.log:example/weather.js:67"],
+  "%s": ["console.log:example/xml2json.js:36"],
   ":Body": [
     "doc.element:lib/base.js:71",
     "doc.element:lib/parser/xmlHandler.js:379",
@@ -148,10 +134,7 @@
     "debug:lib/client.js:328",
     "debug:src/client.js:337"
   ],
-  "message": [
-    "self.emit:lib/client.js:241",
-    "self.emit:src/client.js:248"
-  ],
+  "message": ["self.emit:lib/client.js:241", "self.emit:src/client.js:248"],
   "request": [
     "self.emit:lib/client.js:242",
     "server.listeners:lib/server.js:34",
@@ -166,30 +149,15 @@
     "self.emit:src/server.js:192",
     "self.emit:src/server.js:229"
   ],
-  "response": [
-    "self.emit:lib/client.js:258",
-    "self.emit:src/client.js:266"
-  ],
-  "soapError": [
-    "self.emit:lib/client.js:293",
-    "self.emit:src/client.js:301"
-  ],
-  "Http request: %j": [
-    "debug:lib/http.js:80",
-    "debug:src/http.js:81"
-  ],
-  "Http response body: %j": [
-    "debug:lib/http.js:92",
-    "debug:src/http.js:93"
-  ],
+  "response": ["self.emit:lib/client.js:258", "self.emit:src/client.js:266"],
+  "soapError": ["self.emit:lib/client.js:293", "self.emit:src/client.js:301"],
+  "Http request: %j": ["debug:lib/http.js:80", "debug:src/http.js:81"],
+  "Http response body: %j": ["debug:lib/http.js:92", "debug:src/http.js:93"],
   "NTLM options: %j for method: %s": [
     "debugSensitive:lib/http.js:145",
     "debugSensitive:src/http.js:147"
   ],
-  "httpntlm method: %s": [
-    "debug:lib/http.js:146",
-    "debug:src/http.js:148"
-  ],
+  "httpntlm method: %s": ["debug:lib/http.js:146", "debug:src/http.js:148"],
   "61b096fd390a169fc86698a3fe30387f": [
     "g.f:lib/parser/element.js:126",
     "g.f:src/parser/element.js:131"
@@ -316,10 +284,7 @@
     "debugInclude:lib/parser/wsdl.js:169",
     "debugInclude:src/parser/wsdl.js:181"
   ],
-  "types": [
-    "Types:lib/parser/wsdl.js:302",
-    "Types:src/parser/wsdl.js:320"
-  ],
+  "types": ["Types:lib/parser/wsdl.js:302", "Types:src/parser/wsdl.js:320"],
   "wsdl open. request_headers: %j request_options: %j": [
     "debug:lib/parser/wsdl.js:419",
     "debug:lib/parser/wsdl.js:493",
@@ -752,18 +717,9 @@
     "debug:lib/server.js:300",
     "debug:src/server.js:308"
   ],
-  "data": [
-    "req.on:lib/server.js:84",
-    "req.on:src/server.js:85"
-  ],
-  "end": [
-    "req.on:lib/server.js:88",
-    "req.on:src/server.js:90"
-  ],
-  "error": [
-    "self.log:lib/server.js:116",
-    "self.log:src/server.js:119"
-  ],
+  "data": ["req.on:lib/server.js:84", "req.on:src/server.js:85"],
+  "end": ["req.on:lib/server.js:88", "req.on:src/server.js:90"],
+  "error": ["self.log:lib/server.js:116", "self.log:src/server.js:119"],
   "headers": [
     "self.emit:lib/server.js:190",
     "self.emit:lib/server.js:226",
@@ -780,14 +736,8 @@
     "self.log:src/server.js:151",
     "self.log:src/server.js:169"
   ],
-  "received": [
-    "self.log:lib/server.js:98",
-    "self.log:src/server.js:100"
-  ],
-  "replied": [
-    "self.log:lib/server.js:107",
-    "self.log:src/server.js:109"
-  ],
+  "received": ["self.log:lib/server.js:98", "self.log:src/server.js:100"],
+  "replied": ["self.log:lib/server.js:107", "self.log:src/server.js:109"],
   "_requestWSDL, wsdl in cache %s": [
     "debug:lib/soap.js:23",
     "debug:src/soap.js:23"
@@ -804,10 +754,6 @@
     "Error:lib/strip-bom.js:13",
     "Error:src/strip-bom.js:12"
   ],
-  "forced error on {{createClient}}": [
-    "g.f:soap-stub.js:48"
-  ],
-  "no client stubbed for %s": [
-    "g.f:soap-stub.js:57"
-  ]
+  "forced error on {{createClient}}": ["g.f:soap-stub.js:48"],
+  "no client stubbed for %s": ["g.f:soap-stub.js:57"]
 }

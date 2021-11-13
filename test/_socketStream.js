@@ -3,14 +3,14 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-var fs = require('fs'),
-  duplexer = require('duplexer'),
-  semver = require('semver'),
-  should = require('should'),
-// stream = require('stream'),
-  stream = require('readable-stream');
+var fs = require("fs"),
+  duplexer = require("duplexer"),
+  semver = require("semver"),
+  should = require("should"),
+  // stream = require('stream'),
+  stream = require("readable-stream");
 
 module.exports = function createSocketStream(file) {
   //Create a duplex stream
@@ -20,32 +20,32 @@ module.exports = function createSocketStream(file) {
   var socketStream = duplexer(httpReqStream, httpResStream);
 
   // Node 4.x requires cork/uncork
-  socketStream.cork = function() {
-  };
+  socketStream.cork = function () {};
 
-  socketStream.uncork = function() {
-  };
+  socketStream.uncork = function () {};
 
-  socketStream.destroy = function() {
-  };
+  socketStream.destroy = function () {};
 
   socketStream.req = httpReqStream;
   socketStream.res = httpResStream;
 
-  var wsdl = fs.readFileSync(file).toString('utf8');
+  var wsdl = fs.readFileSync(file).toString("utf8");
   var length = wsdl.length;
   //Should be able to read from stream the request
-  socketStream.req.once('readable', function readRequest() {
+  socketStream.req.once("readable", function readRequest() {
     var chunk = socketStream.req.read();
     should.exist(chunk);
 
-    var header = 'HTTP/1.1 200 OK\r\nContent-Type: text/xml; ' +
-      'charset=utf-8\r\nContent-Length: ' + length + '\r\n\r\n';
+    var header =
+      "HTTP/1.1 200 OK\r\nContent-Type: text/xml; " +
+      "charset=utf-8\r\nContent-Length: " +
+      length +
+      "\r\n\r\n";
 
     //This is for compatibility with old node releases <= 0.10
     //Hackish
-    if (semver.lt(process.version, '0.11.0')) {
-      socketStream.on('data', function(data) {
+    if (semver.lt(process.version, "0.11.0")) {
+      socketStream.on("data", function (data) {
         socketStream.ondata(data, 0, length + header.length);
       });
     }

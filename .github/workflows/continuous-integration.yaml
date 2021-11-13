@@ -8,7 +8,7 @@ on:
     # The branches below must be a subset of the branches above
     branches: [master]
   schedule:
-    - cron: '0 2 * * 1' # At 02:00 on Monday
+    - cron: "0 2 * * 1" # At 02:00 on Monday
 
 permissions: {}
 
@@ -58,7 +58,7 @@ jobs:
           flag-name: run-${{ matrix.os }}-node@${{ matrix.node-version }}
           path-to-lcov: ${{ github.workspace }}/coverage/lcov.info
           parallel: true
-    
+
   posttest:
     name: Post-Test
     needs: test
@@ -94,11 +94,11 @@ jobs:
       # See: https://github.com/github/codeql-action/blob/008b2cc71c4cf3401f45919d8eede44a65b4a322/README.md#usage
       security-events: write
     steps:
-    - uses: actions/checkout@v2
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v1
-      with:
-        languages: 'javascript'
-        config-file: ./.github/codeql/codeql-config.yaml
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v1
+      - uses: actions/checkout@v2
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v1
+        with:
+          languages: "javascript"
+          config-file: ./.github/codeql/codeql-config.yaml
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v1

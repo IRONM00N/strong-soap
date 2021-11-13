@@ -1,5 +1,5 @@
 {
-  "name": "strong-soap",
+  "name": "@ironm00n/strong-soap",
   "version": "3.3.1",
   "description": "A minimal node SOAP client",
   "engines": {

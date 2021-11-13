@@ -1,38 +1,38 @@
 {
-  "writeResponseList":{
-     "writeResponse":[
-        {
-           "status":{
-              "$attributes":{
-                 "isSuccess":"true"
-              }
-           },
-           "baseRef":{
-              "$attributes":{
-                "internalId":"7080",
-                "$xsiType": {
-                      "type": "RecordRef",
-                      "xmlns":"urn:core_2011_1.platform.webservices.netsuite.com"
-                }
-              }
-           }
+  "writeResponseList": {
+    "writeResponse": [
+      {
+        "status": {
+          "$attributes": {
+            "isSuccess": "true"
+          }
         },
-        {
-           "status":{
-              "$attributes":{
-                 "isSuccess":"true"
-              }
-           },
-           "baseRef":{
-            "$attributes":{
-               "internalId":"7081",
-               "$xsiType": {
-                    "type": "RecordRef",
-                    "xmlns":"urn:core_2011_1.platform.webservices.netsuite.com"
-               }
+        "baseRef": {
+          "$attributes": {
+            "internalId": "7080",
+            "$xsiType": {
+              "type": "RecordRef",
+              "xmlns": "urn:core_2011_1.platform.webservices.netsuite.com"
             }
-           }
+          }
         }
-     ]
+      },
+      {
+        "status": {
+          "$attributes": {
+            "isSuccess": "true"
+          }
+        },
+        "baseRef": {
+          "$attributes": {
+            "internalId": "7081",
+            "$xsiType": {
+              "type": "RecordRef",
+              "xmlns": "urn:core_2011_1.platform.webservices.netsuite.com"
+            }
+          }
+        }
+      }
+    ]
   }
 }

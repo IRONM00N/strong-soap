@@ -1,13 +1,13 @@
 {
   "Administrate": {
-  "AdminOperation": {
-    "CreateUser": {
-      "User": {
-        "Name": "name",
-        "Password": "password"
-      },
-      "IgnoreDup": ""
+    "AdminOperation": {
+      "CreateUser": {
+        "User": {
+          "Name": "name",
+          "Password": "password"
+        },
+        "IgnoreDup": ""
+      }
     }
-  }
   }
 }

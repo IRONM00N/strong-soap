@@ -3,22 +3,22 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-'use strict';
+"use strict";
 
-describe('BearerSecurity', function() {
-  var BearerSecurity = require('../../').BearerSecurity;
+describe("BearerSecurity", function () {
+  var BearerSecurity = require("../../").BearerSecurity;
   var token = "token";
 
-  it('is a function', function() {
-    BearerSecurity.should.be.type('function');
+  it("is a function", function () {
+    BearerSecurity.should.be.type("function");
   });
 
-  describe('defaultOption param', function() {
-    it('is accepted as the second param', function() {
+  describe("defaultOption param", function () {
+    it("is accepted as the second param", function () {
       new BearerSecurity(token, {});
     });
 
-    it('is used in addOptions', function() {
+    it("is used in addOptions", function () {
       var options = {};
       var defaultOptions = { foo: 2 };
       var instance = new BearerSecurity(token, defaultOptions);

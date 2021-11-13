@@ -11,16 +11,13 @@
     "firstName": "Allister",
     "lastName": "Sullivan",
     "nullFieldList": {
-      "name": [
-        "officephone",
-        "mobilephone"
-      ]
+      "name": ["officephone", "mobilephone"]
     },
     "phone": "800-555-2819",
     "subscriptionsList": {
       "$attributes": {
         "replaceAll": false
-      }, 
+      },
       "subscriptions": [
         {
           "subscribed": "true",

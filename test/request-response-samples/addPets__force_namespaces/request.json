@@ -1,6 +1,3 @@
 {
-  "pet": [
-     { "Name": "Max" },
-     { "Name": "dillon" }
-   ]
+  "pet": [{ "Name": "Max" }, { "Name": "dillon" }]
 }

@@ -3,36 +3,44 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-var soap = require('..').soap;
+var soap = require("..").soap;
 var XMLHandler = soap.XMLHandler;
 
 var xmlHandler = new XMLHandler();
-var util = require('util');
+var util = require("util");
 
 var json = {
   Envelope: {
     Header: undefined,
     Body: {
       BookStore: {
-        Detail: {StoreDetail: {Name: 'Modern Book Store', Address: '1001 Lane'}},
-        Genre: [{
-          '$attributes': {Id: 'id1'},
-          Aisle: '1',
-          Name: {Fiction: '11'}
+        Detail: {
+          StoreDetail: { Name: "Modern Book Store", Address: "1001 Lane" },
         },
+        Genre: [
           {
-            '$attributes': {Id: 'id2'},
-            Aisle: '2',
-            Name: {NonFiction: '22'}
-          }]
-      }
-    }
-  }
+            $attributes: { Id: "id1" },
+            Aisle: "1",
+            Name: { Fiction: "11" },
+          },
+          {
+            $attributes: { Id: "id2" },
+            Aisle: "2",
+            Name: { NonFiction: "22" },
+          },
+        ],
+      },
+    },
+  },
 };
 
-var node = xmlHandler.jsonToXml(null, null,
-  XMLHandler.createSOAPEnvelopeDescriptor('soap'), json);
-var xml = node.end({pretty: true});
+var node = xmlHandler.jsonToXml(
+  null,
+  null,
+  XMLHandler.createSOAPEnvelopeDescriptor("soap"),
+  json
+);
+var xml = node.end({ pretty: true });
 console.log(xml);
 
 var xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -61,5 +69,3 @@ var xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </ns1:BookStore>
   </soap:Body>
 </soap:Envelope>`;
-
-
