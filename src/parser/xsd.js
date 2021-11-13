@@ -3,6 +3,7 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
+// @ts-check
 "use strict";
 
 var helper = require("./helper");

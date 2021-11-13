@@ -9,6 +9,7 @@
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
+    "@types/node": "^16.11.7",
     "compress": "^0.99.0",
     "debug": "^4.3.2",
     "httpntlm-maa": "^2.0.6",
@@ -46,6 +47,8 @@
   "devDependencies": {
     "@commitlint/cli": "^14.1.0",
     "@commitlint/config-conventional": "^14.1.0",
+    "@types/mocha": "^9.0.0",
+    "assert": "^2.0.0",
     "async": "^3.2.2",
     "colors": "^1.4.0",
     "coveralls": "^3.1.1",

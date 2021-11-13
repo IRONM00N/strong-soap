@@ -8,6 +8,7 @@ strip the BOM characters in the beginning of UTF-8
 or other unicode encoded strings
 http://en.wikipedia.org/wiki/Byte_order_mark 
 */
+// @ts-check
 "use strict";
 module.exports = stripBom;
 

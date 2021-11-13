@@ -1,3 +1,4 @@
+// @ts-check
 "use strict";
 var xmlHandler = require("./../src/parser/xmlHandler");
 var assert = require("assert");
